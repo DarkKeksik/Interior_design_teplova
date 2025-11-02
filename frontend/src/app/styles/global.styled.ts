@@ -5,7 +5,9 @@ const GlobalStyle = createGlobalStyle`
     ${reset}
 
     * {
-        font-family: ${({ theme }) => theme.main && theme.main.fontFamily};
+        font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
+        color: ${({ theme }) => theme.main && theme.main.color_text};
+        box-sizing: border-box;
     }
 
     a {
