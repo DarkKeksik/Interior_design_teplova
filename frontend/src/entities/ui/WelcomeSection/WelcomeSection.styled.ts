@@ -13,7 +13,7 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  height: 100%;
+  height: calc(100vh - 50px);
   padding: 4rem;
   box-sizing: border-box;
 `
@@ -25,18 +25,4 @@ export const WrapModel3DCurcle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  &::before {
-    content: "";
-    background: ${({ theme }) => theme.main.background_black_extra};
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    width: 50vh;
-    height: 50vh;
-    z-index: 0;
-    transform: translate(10%, 8%);
-    border-radius: 100%;
-    z-index: 0;
-  }
 `

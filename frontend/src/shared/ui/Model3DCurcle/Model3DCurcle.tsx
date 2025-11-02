@@ -18,13 +18,16 @@ const Model3DCurcle: FC<TModel3DCurcle> = ({
 
   return (
     <Styled.WrapRound>
-      <Canvas>
-        <Suspense fallback={null}>
-          <primitive object={gltf.scene} scale={0.2} />
-          <OrbitControls />
-          <Environment preset="sunset" />
-        </Suspense>
-      </Canvas>
+      <Styled.Round>
+        <Canvas>
+          <Suspense fallback={null}>
+            <primitive object={gltf.scene} scale={0.2} />
+            <OrbitControls />
+            <Environment preset="sunset" />
+          </Suspense>
+        </Canvas>
+      </Styled.Round>
+      <Styled.Shadow></Styled.Shadow>
     </Styled.WrapRound>
   )
 }
