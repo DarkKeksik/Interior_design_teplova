@@ -1,14 +1,11 @@
 import type { FC, PropsWithChildren } from "react"
-import * as Styled from "./PageWithLayouts.styled"
 
-import { Navigation } from "@shared/ui"
+import { Header } from "@features/Header"
 
 const PageWithLayouts: FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
-      <Styled.Header>
-        <Navigation />
-      </Styled.Header>
+      <Header />
       <main>{children}</main>
     </>
   )

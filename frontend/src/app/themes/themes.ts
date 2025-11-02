@@ -1,14 +1,20 @@
 const themes = {
   main: {
     color_text: "#FFFFF0",
+    color_text_extra: "#A5A59B",
     background_black: "#2A2A2A",
     background_black_extra: "#1B1B1B",
     background_white: "#FFFFF0",
-    hover_button: "#1B1B1B",
     size_headlines: "3.75rem",
     size_text: "0.875rem",
     font_family_text: "Montserrat",
     font_family_headlines: "Montserrat",
+    animation_duration: ".3s",
+
+    background_button: "#FFFFF0",
+    color_button: "#1B1B1B",
+    hover_background_button: "#1B1B1B",
+    hover_text_button: "#FFFFF0",
   },
 }
 

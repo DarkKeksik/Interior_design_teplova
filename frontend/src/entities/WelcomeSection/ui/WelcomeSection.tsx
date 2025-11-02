@@ -12,7 +12,7 @@ const WelcomeSection: FC = () => {
           <Model3DCurcle />
         </Styled.WrapModel3DCurcle>
         <Styled.Texts>
-          <Headline>design & architecture</Headline>
+          <Headline>Minimalistic & Beautiful</Headline>
           <Styled.Description>
             Воплощение Ваших смелых идей, для комфортной жизни
           </Styled.Description>
