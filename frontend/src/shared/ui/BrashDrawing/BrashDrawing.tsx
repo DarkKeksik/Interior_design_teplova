@@ -7,7 +7,7 @@ import * as Styled from "./BrashDrawing.styled"
 
 const configDrawingBlock = {
   minPageSize: 0,
-  maxPageSize: 645,
+  maxPageSize: 345,
   minAngleSlope: -30.0,
   maxAngleSlope: 30.0,
 }
@@ -24,7 +24,7 @@ const BrashDrawing: FC = () => {
 
   const configDrawingBlock = {
     minPageSize: 0,
-    maxPageSize: 645,
+    maxPageSize: 345,
     minAngleSlope: -30.0,
     maxAngleSlope: 30.0,
     speedAngleChange: 2,

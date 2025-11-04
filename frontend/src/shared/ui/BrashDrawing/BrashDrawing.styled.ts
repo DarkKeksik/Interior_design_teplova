@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const Wrap = styled.div`
   display: flex;
@@ -13,10 +13,18 @@ export const DrawingBlock = styled.div`
   justify-content: flex-end;
   width: 100%;
   height: 100%;
-  background: ${({ theme }) => theme.main.background_black};
+  background: ${({ theme }) => theme.main.background_black_extra};
   transform: translate(-100%);
   transition-duration: 1s;
   position: relative;
+
+  ${({ theme }) => css`
+    background: linear-gradient(
+      0,
+      ${theme.main.background_black_extra},
+      ${theme.main.background_black}
+    );
+  `}
 
   &:after {
     content: "";

@@ -13,7 +13,7 @@ const themes = {
 
     background_button: "#FFFFF0",
     color_button: "#1B1B1B",
-    hover_background_button: "#1B1B1B",
+    hover_background_button: "#2a2a2a",
     hover_text_button: "#FFFFF0",
   },
 }

@@ -2,7 +2,7 @@ import type { FC } from "react"
 
 import * as Styled from "./MainPage.styled"
 
-import { WelcomeSection, GalleryWorksShort } from "@entities/index"
+import { WelcomeSection, GallerySection } from "@entities/index"
 import { BrashDrawing } from "@shared/ui"
 
 const MainPage: FC = () => {
@@ -10,7 +10,7 @@ const MainPage: FC = () => {
     <Styled.Wrap>
       <WelcomeSection />
       <BrashDrawing />
-      <GalleryWorksShort />
+      <GallerySection />
     </Styled.Wrap>
   )
 }
