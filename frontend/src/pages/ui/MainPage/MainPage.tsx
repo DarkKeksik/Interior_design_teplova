@@ -2,12 +2,13 @@ import type { FC } from "react"
 
 import * as Styled from "./MainPage.styled"
 
-import { WelcomeSection } from "@entities/index"
+import { GallerySection, WelcomeSection } from "@entities/index"
 
 const MainPage: FC = () => {
   return (
     <Styled.Wrap>
       <WelcomeSection />
+      <GallerySection />
     </Styled.Wrap>
   )
 }
