@@ -2,8 +2,8 @@ import styled from "styled-components"
 
 export const Menu = styled.nav`
   display: flex;
-  gap: 1.5rem;
   height: 100%;
+  z-index: 2;
 `
 
 export const Item = styled.a`
@@ -13,6 +13,7 @@ export const Item = styled.a`
   align-items: center;
   position: relative;
   overflow: hidden;
+  padding: 0 1rem;
 
   font-size: 13px;
   font-family: ${({ theme }) => theme.main.font_family_text};
@@ -39,6 +40,14 @@ export const Item = styled.a`
   &:hover {
     &:before {
       transform: translateX(0%);
+    }
+  }
+
+  &.active {
+    background: ${({ theme }) => theme.main.background_black};
+
+    &:hover::before {
+      display: none;
     }
   }
 `

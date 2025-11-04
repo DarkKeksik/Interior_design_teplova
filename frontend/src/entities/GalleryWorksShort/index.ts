@@ -1,0 +1,1 @@
+export { GalleryWorksShort } from "./ui"

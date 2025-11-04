@@ -7,4 +7,9 @@ export const Header = styled.header`
   height: 50px;
   padding: 0 2rem;
   background: ${({ theme }) => theme.main.background_black_extra};
+  box-shadow: 0 0 5px ${({ theme }) => theme.main.background_black_extra};
+
+  position: sticky;
+  top: 0;
+  z-index: 2;
 `
