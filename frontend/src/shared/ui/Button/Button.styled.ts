@@ -8,6 +8,7 @@ export const Button = styled.button`
     color: ${theme.main.color_button};
     transition-duration: ${theme.main.animation_duration};
   `}
+  cursor: pointer;
 
   min-height: 2rem;
   min-width: 140px;
