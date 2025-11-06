@@ -1,6 +1,7 @@
 import type { FC } from "react"
 import { useState, useEffect, useRef } from "react"
 
+// @ts-ignore
 import BrashIcon from "./brush.svg?react"
 
 import * as Styled from "./BrashDrawing.styled"

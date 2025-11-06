@@ -1,37 +1,10 @@
 import type { FC } from "react"
 
 import { RequestProjectBlock } from "@entities/index"
-import { Headline } from "@shared/ui"
+
+import { dataAboutMe } from "../../config"
 
 import * as Styled from "./AboutMeBlock.styled"
-
-const dataAboutMe = [
-  {
-    title: "10 лет",
-    description: (
-      <span>
-        Нахожу общий язык с клиентами <br /> на протяжении 10 лет!
-      </span>
-    ),
-  },
-  {
-    title: "70+",
-    description: (
-      <span>
-        Более 70 проектов <br /> реализованно в срок
-      </span>
-    ),
-  },
-  {
-    title: "12",
-    description: (
-      <p>
-        Двенадцать и более упоминаний
-        <br />в СМИ и статей на популяпных дизайнерских сайтах
-      </p>
-    ),
-  },
-]
 
 const AboutMeBlock: FC = () => {
   return (
