@@ -5,5 +5,8 @@ export { default as Menu } from "./Menu/Menu"
 export { default as Logo } from "./Logo/Logo"
 export { default as Button } from "./Button/Button"
 export { default as BrashDrawing } from "./BrashDrawing/BrashDrawing"
+export { default as SocialNetworks } from "./SocialNetworks/SocialNetworks"
 
 export { default as InputPhone } from "./InputPhone/InputPhone"
+
+export { default as Icons } from "./Icons"

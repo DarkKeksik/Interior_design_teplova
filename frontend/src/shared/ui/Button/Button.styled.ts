@@ -11,7 +11,8 @@ export const Button = styled.button`
   cursor: pointer;
 
   min-height: 2rem;
-  min-width: 140px;
+  min-width: 100px;
+  padding: 0 1rem;
   border-radius: 200px;
 
   font-size: 13px;

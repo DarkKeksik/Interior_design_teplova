@@ -1,11 +1,22 @@
 import styled from "styled-components"
 
 export const RequestProjectBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 1.5rem;
   min-width: 400px;
   min-height: 200px;
   border-radius: 5px;
   background: ${({ theme }) => theme.main.background_black_extra};
+`
+
+export const Form = styled.form`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
 `
 
 export const Title = styled.h3`

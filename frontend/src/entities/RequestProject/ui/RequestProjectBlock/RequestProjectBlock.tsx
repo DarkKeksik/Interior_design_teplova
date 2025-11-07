@@ -1,6 +1,6 @@
 import type { FC } from "react"
 
-import { InputPhone } from "@shared/ui"
+import { InputPhone, SocialNetworks, Button } from "@shared/ui"
 import * as Styled from "./RequestProjectBlock.styled"
 
 export const RequestProjectBlock: FC = () => {
@@ -10,7 +10,11 @@ export const RequestProjectBlock: FC = () => {
         <span>Обсудим ваш</span>
         <Styled.Title_extra>будущий проект?</Styled.Title_extra>
       </Styled.Title>
-      <InputPhone />
+      <Styled.Form>
+        <InputPhone />
+        <Button text="Отправить" />
+      </Styled.Form>
+      <SocialNetworks />
     </Styled.RequestProjectBlock>
   )
 }

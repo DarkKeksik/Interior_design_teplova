@@ -30,7 +30,7 @@ export const Item = styled.a`
 
     height: 2px;
     width: 100%;
-    background: #fffff0;
+    background: ${({ theme }) => theme.main.color_text_extra};
 
     transform: translateX(calc(-100% - 2px));
     transition-duration: ${({ theme }) => theme.main.animation_duration};
@@ -44,7 +44,7 @@ export const Item = styled.a`
   }
 
   &.active {
-    background: ${({ theme }) => theme.main.background_black};
+    border-bottom: 3px solid ${({ theme }) => theme.main.color_text_extra};
 
     &:hover::before {
       display: none;
