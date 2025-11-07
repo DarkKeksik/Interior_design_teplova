@@ -31,15 +31,17 @@ const GlobalStyle = createGlobalStyle`
     }
 
     @supports selector(::-webkit-scrollbar) {
-        .scroll-box::-webkit-scrollbar {
-            background: ${({ theme }) => theme.main && theme.main.background_black};
-            width: 8px;
-            border-radius: 0;
-        }
-        .scroll-box::-webkit-scrollbar-thumb {
-            background: ${({ theme }) => theme.main && theme.main.background_white};;
-            width: 10px;
-            border-radius: 5px;
+        body {
+            &::-webkit-scrollbar {
+                background: ${({ theme }) => theme.main && theme.main.background_black};
+                width: 8px;
+                border-radius: 0;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: ${({ theme }) => theme.main && theme.main.background_white};
+                width: 10px;
+                border-radius: 5px;
+            }
         }
     }
 `
