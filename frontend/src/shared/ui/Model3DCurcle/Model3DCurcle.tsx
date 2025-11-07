@@ -1,7 +1,7 @@
 import type { FC } from "react"
 import { Suspense } from "react"
 
-import { Environment, OrbitControls } from "@react-three/drei"
+import { OrbitControls } from "@react-three/drei"
 import { useLoader, Canvas } from "@react-three/fiber"
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
 
@@ -23,7 +23,6 @@ const Model3DCurcle: FC<TModel3DCurcle> = ({
           <Suspense fallback={null}>
             <primitive object={gltf.scene} scale={0.5} />
             <OrbitControls />
-            <Environment preset="sunset" />
           </Suspense>
         </Canvas>
       </Styled.Round>

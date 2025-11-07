@@ -7,7 +7,7 @@ import * as Styled from "./IconTelegram.styled"
 const IconTelegram: FC = () => {
   return (
     <Styled.IconWrap>
-      <Icon width="1.8rem" height="1.8rem" stroke="white" />
+      <Styled.Icon as={Icon} width="1.8rem" height="1.8rem" stroke="#FFFFF0" />
     </Styled.IconWrap>
   )
 }

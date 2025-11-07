@@ -1,6 +1,7 @@
 const themes = {
   main: {
     color_text: "#FFFFF0",
+    some_accent: "#CBA35C",
     color_text_extra: "#A5A59B",
     background_black: "#2A2A2A",
     background_black_extra: "#1B1B1B",

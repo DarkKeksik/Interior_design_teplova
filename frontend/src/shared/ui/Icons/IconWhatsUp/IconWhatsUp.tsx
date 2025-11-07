@@ -7,7 +7,7 @@ import * as Styled from "./IconWhatsUp.styled"
 const IconWhatsUp: FC = () => {
   return (
     <Styled.IconWrap>
-      <Styled.Icon as={Icon} width="1.8rem" height="1.8rem" fill="white" />
+      <Styled.Icon as={Icon} width="1.8rem" height="1.8rem" fill="#FFFFF0" />
     </Styled.IconWrap>
   )
 }
