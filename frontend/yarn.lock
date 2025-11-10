@@ -761,6 +761,11 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.8.tgz#958b91c991b1867ced318bedea0e215ee050726e"
   integrity sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==
 
+"@types/frappe-gantt@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@types/frappe-gantt/-/frappe-gantt-0.9.0.tgz#2884f9ba27e9313168a51898def866a8f49db833"
+  integrity sha512-n00ElvRvJ1/+HkJwt57yjnTtAM7FcH/pEV9LbRCy3+hR39TY6l0mQuy4o909uxvw97aCNhQjNh8J8xACKJ2G3w==
+
 "@types/node@^20.14.9":
   version "20.19.24"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.19.24.tgz#6bc35bc96cda1a251000b706c76380b5c843f30b"
@@ -1596,6 +1601,11 @@ form-data@^4.0.4:
     es-set-tostringtag "^2.1.0"
     hasown "^2.0.2"
     mime-types "^2.1.12"
+
+frappe-gantt@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/frappe-gantt/-/frappe-gantt-1.0.4.tgz#efa40ceaa284fcf0ff3d4f9cf93d488d5000e37b"
+  integrity sha512-N94OP9ZiapaG5nzgCeZdxsKP8HD5aLVlH5sEHxSNZQnNKQ4BOn2l46HUD+KIE0LpYIterP7gIrFfkLNRuK0npQ==
 
 fs.realpath@^1.0.0:
   version "1.0.0"

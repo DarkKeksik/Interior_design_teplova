@@ -6,7 +6,7 @@ export const Logo = styled.div`
   justify-content: center;
   align-items: center;
 
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   letter-spacing: 1px;
   font-weight: 600;
   font-family: ${({ theme }) => theme.main.font_family_text};

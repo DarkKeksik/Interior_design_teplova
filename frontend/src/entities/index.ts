@@ -1,4 +1,4 @@
 export { WelcomeSection } from "./WelcomeSection"
 export { FeedbackBlock } from "./Feedback"
-export { GallerySection } from "./GallerySection"
+export { GalleryShortSection } from "./GalleryShortSection"
 export { RequestProjectBlock } from "./RequestProject"

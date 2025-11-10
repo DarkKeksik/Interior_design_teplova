@@ -14,6 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "@swc/plugin-styled-components": "9.1.0",
+    "@types/frappe-gantt": "^0.9.0",
     "@types/node": "^20.14.9",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -37,6 +38,7 @@
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.4.0",
     "axios": "^1.12.2",
+    "frappe-gantt": "^1.0.4",
     "input-format": "^0.3.14",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

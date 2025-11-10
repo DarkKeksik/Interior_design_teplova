@@ -6,10 +6,10 @@ export const Header = styled.header`
   gap: 1rem;
   height: 50px;
   padding: 0 2rem;
-  background: ${({ theme }) => theme.main.background_black_extra};
+  background: #1b1b1bf0;
   box-shadow: 0 0 5px ${({ theme }) => theme.main.background_black_extra};
 
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 1001;
 `

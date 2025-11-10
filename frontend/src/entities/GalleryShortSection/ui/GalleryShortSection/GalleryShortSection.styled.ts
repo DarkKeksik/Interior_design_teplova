@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 `
 
 export const Content = styled.div`
@@ -26,18 +27,27 @@ export const Content = styled.div`
 `
 
 const Item = styled.div`
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
   border-radius: 5px;
+  overflow: hidden;
+
+  &:hover div {
+    opacity: 1;
+  }
 `
+
 export const AArea = styled(Item)`
   grid-area: A;
   background-image: url("/img/gallery_main.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  font-size: 1em;
 `
 
 export const BArea = styled(Item)`
@@ -45,6 +55,7 @@ export const BArea = styled(Item)`
   background-image: url("/img/1.5-small-gallery.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  font-size: 0.9em;
 `
 
 export const CArea = styled(Item)`
@@ -52,6 +63,7 @@ export const CArea = styled(Item)`
   background-image: url("/img/2x-small-gallery.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  font-size: 0.8em;
 `
 
 export const DArea = styled(Item)`
@@ -59,6 +71,7 @@ export const DArea = styled(Item)`
   background-image: url("/img/2.5x-small-gallery.jfif");
   background-repeat: no-repeat;
   background-size: cover;
+  font-size: 0.5em;
 `
 
 export const EArea = styled(Item)`

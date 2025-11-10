@@ -8,9 +8,10 @@ import * as Styled from "./BrashDrawing.styled"
 
 const configDrawingBlock = {
   minPageSize: 0,
-  maxPageSize: 345,
+  maxPageSize: 800,
   minAngleSlope: -30.0,
   maxAngleSlope: 30.0,
+  speedAngleChange: 2,
 }
 
 const calcPercentageFromNumber = (number: number) => {
@@ -22,14 +23,6 @@ const BrashDrawing: FC = () => {
     window.addEventListener("scroll", handleScroll, { passive: true })
     // return window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  const configDrawingBlock = {
-    minPageSize: 0,
-    maxPageSize: 345,
-    minAngleSlope: -30.0,
-    maxAngleSlope: 30.0,
-    speedAngleChange: 2,
-  }
 
   const [brashDegree, setBrashDegree] = useState(configDrawingBlock.minAngleSlope)
   const [widthDrawingBlock, setWidthDrawingBlock] = useState(configDrawingBlock.minPageSize)

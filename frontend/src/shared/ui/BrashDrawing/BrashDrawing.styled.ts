@@ -15,7 +15,7 @@ export const DrawingBlock = styled.div`
   height: 100%;
   background: ${({ theme }) => theme.main.background_black_extra};
   transform: translate(-100%);
-  transition-duration: 1s;
+  transition-duration: 0.2s;
   position: relative;
 
   ${({ theme }) => css`

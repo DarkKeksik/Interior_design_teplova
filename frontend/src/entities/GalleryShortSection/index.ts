@@ -1,0 +1,1 @@
+export { GalleryShortSection } from "./ui"

@@ -3,16 +3,17 @@ import type { FC } from "react"
 import * as Styled from "./MainPage.styled"
 
 import { AboutMeBlock } from "@features/index"
-import { WelcomeSection, GallerySection } from "@entities/index"
-import { BrashDrawing } from "@shared/ui"
+import { WelcomeSection, GalleryShortSection } from "@entities/index"
+import { BrashDrawing, Chart_gantt } from "@shared/ui"
 
 const MainPage: FC = () => {
   return (
     <Styled.Wrap>
       <WelcomeSection />
       <BrashDrawing />
-      <GallerySection />
+      <GalleryShortSection />
       <AboutMeBlock />
+      <Chart_gantt />
     </Styled.Wrap>
   )
 }

@@ -44,6 +44,10 @@ const GlobalStyle = createGlobalStyle`
             }
         }
     }
+    
+    body {
+        background-color: ${({ theme }) => theme.main.background_black_extra};
+    }
 `
 
 export default GlobalStyle
