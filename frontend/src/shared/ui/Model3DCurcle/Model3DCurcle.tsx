@@ -1,29 +1,32 @@
 import type { FC } from "react"
-import { Suspense } from "react"
 
-import { OrbitControls } from "@react-three/drei"
+import { useRef, useState } from "react"
+
 import { useLoader, Canvas } from "@react-three/fiber"
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
+
+import { CanvasWrapper } from "@shared/ui/Model3DCurcle/ui/CanvasWrapper"
 
 import * as Styled from "./Model3DCurcle.styled"
 
 type TModel3DCurcle = {
-  src_model?: string
+  srcModel?: string
 }
 
 const Model3DCurcle: FC<TModel3DCurcle> = ({
-  src_model = "models/appart_type_1_1/appart_type_1_1.glb",
+  srcModel = "models/appart_type_1_1/appart_type_1_1.glb",
 }) => {
-  const gltf = useLoader(GLTFLoader, src_model)
+  const gltf = useLoader(GLTFLoader, srcModel)
+  const [isUserInteracting, setIsUserInteracting] = useState(false)
 
   return (
     <Styled.WrapRound>
-      <Styled.Round>
+      <Styled.Round
+        onMouseOver={() => setIsUserInteracting(true)}
+        onMouseOut={() => setIsUserInteracting(false)}
+      >
         <Canvas>
-          <Suspense fallback={null}>
-            <primitive object={gltf.scene} scale={0.5} />
-            <OrbitControls />
-          </Suspense>
+          <CanvasWrapper isUserInteracting={isUserInteracting} gltf={gltf} />
         </Canvas>
       </Styled.Round>
       <Styled.Shadow />

@@ -11,8 +11,8 @@ const AboutMeBlock: FC = () => {
     <Styled.AboutMeBlock>
       <Styled.Headline>Oбо мне</Styled.Headline>
       <Styled.InfoBlocks>
-        {dataAboutMe.map(({ title, description }) => (
-          <Styled.InfoBlock>
+        {dataAboutMe.map(({ title, description }, id) => (
+          <Styled.InfoBlock key={id}>
             <Styled.Title>{title}</Styled.Title>
             <Styled.Description>{description}</Styled.Description>
           </Styled.InfoBlock>
