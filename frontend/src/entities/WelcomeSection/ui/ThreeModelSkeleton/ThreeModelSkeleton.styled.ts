@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
-export const WrapRound = styled.div`
+export const Wrapper = styled.div`
   position: relative;
+  overflow: hidden;
 `
 
 export const Shadow = styled.div`
@@ -17,7 +18,7 @@ export const Shadow = styled.div`
   filter: blur(50px);
 `
 
-export const Round = styled.div`
+export const Circle = styled.div`
   position: relative;
   overflow: hidden;
   width: 50vh;
