@@ -17,6 +17,24 @@ const themes = {
     hover_background_button: "#2a2a2a",
     hover_text_button: "#FFFFF0",
   },
+  modal: {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      background: "none",
+      border: "none",
+      padding: "20px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    },
+    overlay: {
+      backgroundColor: "rgba(0, 0, 0, 0.7)",
+      zIndex: 9999,
+    },
+  },
 }
 
 export default themes

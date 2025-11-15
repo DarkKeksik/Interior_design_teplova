@@ -1,6 +1,6 @@
 import type { FC } from "react"
 
-import { useState, Suspense } from "react"
+import { useState } from "react"
 
 import { useStore, useFrame } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
@@ -32,8 +32,8 @@ export const CanvasWrapper: FC<TCanvasWrapper> = ({ isUserInteracting, gltf }) =
 
   const changeRotationCamera = () => {
     setRotationVector3((prev) => {
-      let [positionXCamera, positionYCamera, positionZCamera] = prev
-      let newPositionY =
+      const [positionXCamera, positionYCamera, positionZCamera] = prev
+      const newPositionY =
         positionYCamera >= rotationConfig.fullTurnY
           ? 0
           : positionYCamera + rotationConfig.speedCameraRotationY
@@ -49,9 +49,9 @@ export const CanvasWrapper: FC<TCanvasWrapper> = ({ isUserInteracting, gltf }) =
   })
 
   return (
-    <Suspense fallback={null}>
+    <>
       <primitive object={gltf.scene} scale={0.5} rotation={rotationVector3} />
       <OrbitControls />
-    </Suspense>
+    </>
   )
 }
