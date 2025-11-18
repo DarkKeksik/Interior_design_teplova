@@ -6,7 +6,8 @@ export { default as Logo } from "./Logo/Logo"
 export { default as Button } from "./Button/Button"
 export { default as BrashDrawing } from "./BrashDrawing/BrashDrawing"
 export { default as SocialNetworks } from "./SocialNetworks/SocialNetworks"
-export { default as Chart_gantt } from "./Chart_gantt/Chart_gantt"
+export { default as ChartGantt } from "./ChartGantt/ChartGantt"
+export { default as TitleSection } from "./TitleSection/TitleSection"
 
 export { default as InputPhone } from "./InputPhone/InputPhone"
 

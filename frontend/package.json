@@ -38,12 +38,12 @@
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.4.0",
     "axios": "^1.12.2",
-    "frappe-gantt": "^1.0.4",
+    "gantt-task-react": "^0.3.9",
     "input-format": "^0.3.14",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router": "^7.9.5",
-    "react-router-dom": "^7.8.1",
+    "react-router-dom": "6.4",
     "three": "^0.181.0"
   }
 }

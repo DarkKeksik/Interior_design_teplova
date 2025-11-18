@@ -30,11 +30,10 @@ export const Item = styled.a`
 
     height: 2px;
     width: 100%;
-    background: ${({ theme }) => theme.main.color_text_extra};
 
     transform: translateX(calc(-100% - 2px));
     transition-duration: ${({ theme }) => theme.main.animation_duration};
-    background: ${({ theme }) => theme.main.color_text};
+    background: ${({ theme }) => theme.main.color_text_extra};
   }
 
   &:hover {

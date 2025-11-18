@@ -3,8 +3,8 @@ import type { FC } from "react"
 import * as Styled from "./MainPage.styled"
 
 import { AboutMeBlock } from "@features/index"
-import { WelcomeSection, GalleryShortSection } from "@entities/index"
-import { BrashDrawing, Chart_gantt } from "@shared/ui"
+import { WelcomeSection, GalleryShortSection, PlanDesignWork } from "@entities/index"
+import { BrashDrawing } from "@shared/ui"
 
 const MainPage: FC = () => {
   return (
@@ -13,7 +13,7 @@ const MainPage: FC = () => {
       <BrashDrawing />
       <GalleryShortSection />
       <AboutMeBlock />
-      <Chart_gantt />
+      <PlanDesignWork />
     </Styled.Wrap>
   )
 }

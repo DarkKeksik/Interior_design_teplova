@@ -6,6 +6,7 @@ export const Footer = styled.footer`
   min-height: 150px;
   padding: 2rem 4rem;
   background: ${({ theme }) => theme.main.background_black_extra};
+  border-top: 3px solid #fffff0;
   box-sizing: content-box;
 `
 
@@ -35,5 +36,4 @@ export const Description = styled.div`
   align-items: flex-start;
   height: 100%;
   border-right: 2px solid #fffff0;
-  border-radius: 10px;
 `
