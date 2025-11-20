@@ -4,7 +4,7 @@ export const Wrap = styled.div`
   display: flex;
   justify-content: end;
   background: ${({ theme }) => theme.main.background_white};
-  height: 50px;
+  height: 5px;
   overflow: hidden;
 `
 
@@ -15,7 +15,7 @@ export const DrawingBlock = styled.div`
   height: 100%;
   background: ${({ theme }) => theme.main.background_black_extra};
   transform: translate(-100%);
-  transition-duration: 0.2s;
+  transition-duration: 0.1s;
   position: relative;
 
   ${({ theme }) => css`

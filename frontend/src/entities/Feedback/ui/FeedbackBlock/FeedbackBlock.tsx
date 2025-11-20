@@ -3,7 +3,7 @@ import { FC, useState } from "react"
 import { ButtonModal } from "../"
 
 import * as Styled from "./FeedbackBlock.styled"
-import { ContactUsModal } from "./ui/ContactUsModal"
+import { ContactUsModal } from "../ContactUsModal"
 
 const FeedbackBlock: FC = () => {
   const [isOpen, setIsOpen] = useState(false)

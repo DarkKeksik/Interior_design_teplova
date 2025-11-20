@@ -8,6 +8,8 @@ export { default as BrashDrawing } from "./BrashDrawing/BrashDrawing"
 export { default as SocialNetworks } from "./SocialNetworks/SocialNetworks"
 export { default as ChartGantt } from "./ChartGantt/ChartGantt"
 export { default as TitleSection } from "./TitleSection/TitleSection"
+export { default as Modal } from "./Modal/Modal"
+export { default as ModalNew } from "./ModalNew/ModalNew"
 
 export { default as InputPhone } from "./InputPhone/InputPhone"
 

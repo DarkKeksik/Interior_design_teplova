@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const FeedbackBlock = styled.div`
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
 `

@@ -1,39 +1,34 @@
-import { FC, ReactNode } from "react"
-import { default as ReactModal } from "react-modal"
+import type { FC, ReactNode } from "react"
+import ReactModal from "react-modal"
+
+import * as Styled from "./Modal.styled"
 
 type TModalProps = {
   id: string
   title: string
   isOpen: boolean
   onAfterOpen?: () => void
-  className?: string
-  styles?: ReactModal.Styles
   onClose: () => void
   children: ReactNode
 }
 
-export const Modal: FC<TModalProps> = ({
-  id,
-  title,
-  isOpen,
-  className,
-  styles,
-  onClose,
-  children,
-}) => {
+const Modal: FC<TModalProps> = ({ id, title, isOpen, onClose, children, ...props }) => {
   return (
-    <ReactModal
-      className={className}
+    <Styled.Modal
+      as={ReactModal}
       id={id}
       contentLabel={title}
       isOpen={isOpen}
-      style={styles}
       onAfterOpen={() => (document.body.style.overflow = "hidden")}
       onAfterClose={() => (document.body.style.overflow = "unset")}
       shouldCloseOnOverlayClick={true}
       onRequestClose={onClose}
+      style={{ background: "red" }}
+      {...props}
     >
-      {children}
-    </ReactModal>
+      <div>lorem</div>
+    </Styled.Modal>
   )
 }
+
+export default Modal

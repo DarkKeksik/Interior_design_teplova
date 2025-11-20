@@ -19,25 +19,29 @@ const themes = {
     hover_text_button: "#FFFFF0",
 
     background_table: "#2A2A2A",
-  },
-  modal: {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      background: "none",
-      border: "none",
-      padding: "20px",
-      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+
+    modal: {
+      content: {
+        top: "50%",
+        left: "50%",
+        right: "auto",
+        bottom: "auto",
+        marginRight: "-50%",
+        transform: "translate(-50%, -50%)",
+        background: "none",
+        border: "none",
+        padding: "20px",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+        colorText: "#1B1B1B",
+      },
+      overlay: {
+        background: "rgba(0, 0, 0, 0.8)",
+        zIndex: 9999,
+      },
     },
-    overlay: {
-      backgroundColor: "rgba(0, 0, 0, 0.7)",
-      zIndex: 9999,
-    },
   },
+
+  dark: {},
 }
 
 export default themes
