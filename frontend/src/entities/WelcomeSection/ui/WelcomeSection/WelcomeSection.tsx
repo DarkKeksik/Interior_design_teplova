@@ -1,15 +1,18 @@
-import type { FC } from "react"
+import { FC, Suspense } from "react"
 
-import * as Styled from "./WelcomeSection.styled"
+import * as Styled from "./WelcomeSection.styled.ts"
 
 import { SectionBlack, Headline, Model3DCurcle } from "@shared/ui"
+import { ThreeModelSkeleton } from "@entities/WelcomeSection/ui/ThreeModelSkeleton"
 
 const WelcomeSection: FC = () => {
   return (
     <SectionBlack>
       <Styled.Content>
         <Styled.WrapModel3DCurcle>
-          <Model3DCurcle />
+          <Suspense fallback={<ThreeModelSkeleton />}>
+            <Model3DCurcle />
+          </Suspense>
         </Styled.WrapModel3DCurcle>
         <Styled.Texts>
           <Headline>Minimalistic & Beautiful</Headline>

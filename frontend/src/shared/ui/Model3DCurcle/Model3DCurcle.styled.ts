@@ -6,8 +6,6 @@ export const WrapRound = styled.div`
 
 export const Shadow = styled.div`
   background: ${({ theme }) => theme.main.background_black_extra};
-  width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
   width: 55vh;
@@ -21,7 +19,6 @@ export const Shadow = styled.div`
 
 export const Round = styled.div`
   position: relative;
-  height: 100%;
   overflow: hidden;
   width: 50vh;
   height: 50vh;
