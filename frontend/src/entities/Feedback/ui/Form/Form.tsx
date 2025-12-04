@@ -4,7 +4,7 @@ import { useState } from "react"
 import * as Styled from "./Form.styed"
 
 type TForm = {
-  onClose: () => void
+  onClose: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const Form: FC<TForm> = ({ onClose }) => {

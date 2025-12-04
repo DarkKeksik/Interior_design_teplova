@@ -1,5 +1,4 @@
 import type { FC } from "react"
-import { useState } from "react"
 
 import { ModalNew } from "@shared/ui"
 
@@ -7,7 +6,7 @@ import { Form } from "../"
 
 type TContactUsModalProps = {
   isOpen: boolean
-  onClose: () => void
+  onClose: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const ContactUsModal: FC<TContactUsModalProps> = ({ onClose, ...props }) => {

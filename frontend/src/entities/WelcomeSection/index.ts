@@ -1,1 +1,1 @@
-export { default as WelcomeSection } from "./ui/WelcomeSection"
+export { WelcomeSection } from "./ui"

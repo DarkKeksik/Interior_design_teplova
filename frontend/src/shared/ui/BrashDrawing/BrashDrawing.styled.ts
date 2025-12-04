@@ -3,8 +3,8 @@ import styled, { css } from "styled-components"
 export const Wrap = styled.div`
   display: flex;
   justify-content: end;
-  background: ${({ theme }) => theme.main.background_white};
-  height: 5px;
+  background: #282828;
+  height: 4rem;
   overflow: hidden;
 `
 
@@ -29,9 +29,8 @@ export const DrawingBlock = styled.div`
   &:after {
     content: "";
     position: absolute;
-    right: -39px;
 
-    background: linear-gradient(90deg, #2a2a2a, #8e8e8e);
+    background: linear-gradient(0, #1b1b1b, #282828);
     width: 40px;
     height: 100%;
   }
@@ -39,7 +38,7 @@ export const DrawingBlock = styled.div`
 
 export const BrashIcon = styled.div`
   & {
-    transform: translate(calc(100% + 30px), -15px);
+    transform: translateX(calc(100% + 30px));
     z-index: 1;
   }
 `

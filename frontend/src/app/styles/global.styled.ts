@@ -34,17 +34,16 @@ const GlobalStyle = createGlobalStyle`
     }
 
     @supports selector(::-webkit-scrollbar) {
-        body {
-            &::-webkit-scrollbar {
-                background: ${({ theme }) => theme.main && theme.main.background_black};
-                width: 8px;
-                border-radius: 0;
-            }
-            &::-webkit-scrollbar-thumb {
-                background: ${({ theme }) => theme.main && theme.main.background_white};
-                width: 10px;
-                border-radius: 5px;
-            }
+        *::-webkit-scrollbar {
+            background: ${({ theme }) => theme.main && theme.main.background_black};
+            width: 8px;
+            border-radius: 0;
+        }
+        
+        *::-webkit-scrollbar-thumb {
+            background: ${({ theme }) => theme.main && theme.main.background_white};
+            width: 10px;
+            border-radius: 5px;
         }
     }
     

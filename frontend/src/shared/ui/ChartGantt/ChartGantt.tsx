@@ -35,24 +35,26 @@ const ChartGantt: FC<TChartGantt> = ({ data_tasks = dataMock, ...props }) => {
     }
   }, [refContentChart.current])
 
+  const Rows = new Array(countRows).fill(null)
+
   return (
     <Styled.ChartGantt widthCol={widthCol}>
       <Styled.ChartHeaderCustom ref={refHeaderChartGantt}>
-        {dataHeader.map((item) => (
-          <Styled.Mount>{item}</Styled.Mount>
+        {dataHeader.map((item, id) => (
+          <Styled.Mount key={id}>{item}</Styled.Mount>
         ))}
       </Styled.ChartHeaderCustom>
 
       <Styled.ChartColsRowsCustom ref={refContentChart}>
         <Styled.RowsCustom>
-          {new Array(countRows).fill(
-            <CustomRow>
+          {Rows.map((_, id) => (
+            <CustomRow key={id}>
               <CustomColumns />
               <CustomColumns />
               <CustomColumns />
               <CustomColumns />
             </CustomRow>
-          )}
+          ))}
         </Styled.RowsCustom>
 
         <Gantt

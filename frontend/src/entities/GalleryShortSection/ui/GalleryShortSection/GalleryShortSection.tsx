@@ -10,7 +10,7 @@ import * as Styled from "./GalleryShortSection.styled.ts"
 
 const GalleryShortSection: FC = () => {
   return (
-    <SectionBlack>
+    <SectionBlack isPadding={false} typeBg="blackExtra">
       <Styled.Container>
         <Styled.Content>
           <Styled.AArea>
@@ -30,7 +30,7 @@ const GalleryShortSection: FC = () => {
           </Styled.DArea>
 
           <Styled.EArea>
-            <Styled.ButtonGallery as={Link} to={linksPages.page_gallery.link}>
+            <Styled.ButtonGallery as={Link} to={linksPages.page_projects.link}>
               Больше <br /> проектов
             </Styled.ButtonGallery>
           </Styled.EArea>

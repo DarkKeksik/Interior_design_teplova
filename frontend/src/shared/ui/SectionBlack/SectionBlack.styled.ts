@@ -1,8 +1,14 @@
 import styled from "styled-components"
 
-type TSectionBlack = { size?: "s" | "m" | "l" }
+type TSectionBlack = {
+  size?: "s" | "m" | "l"
+  typeBg: "black" | "blackExtra"
+  isPadding: boolean
+}
 
 export const SectionBlack = styled.section<TSectionBlack>`
+  padding: ${({ isPadding }) => (isPadding ? "4rem 2rem;" : 0)};
+
   min-height: calc(
     ${({ size = "l" }) => {
         switch (size) {
@@ -16,5 +22,12 @@ export const SectionBlack = styled.section<TSectionBlack>`
       }} -
       50px
   );
-  background: ${({ theme }) => theme.main.background_black};
+
+  background: ${({ theme, typeBg }) => {
+    if (typeBg == "blackExtra") {
+      return theme.main.background_black_extra
+    }
+
+    return theme.main.background_black
+  }};
 `

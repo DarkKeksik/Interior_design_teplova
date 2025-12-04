@@ -5,11 +5,16 @@ import { Logo } from "@shared/ui"
 
 import * as Styled from "./ModalNew.styled"
 
+type TSizesModal = "s" | "m" | "l"
+
 type TModal = PropsWithChildren<{
   isOpen: boolean
-  onClose: () => void
+  onClose: React.Dispatch<React.SetStateAction<any>>
   title?: string
-  subTitle: string
+  subTitle?: string
+  isHeader?: boolean
+  isPadding?: boolean
+  size?: TSizesModal
 }> &
   React.HTMLAttributes<HTMLDivElement>
 
@@ -18,12 +23,23 @@ const modal_accessibility = {
   tabIndex: -1,
 }
 
-const ModalNew: FC<TModal> = ({ isOpen = false, onClose, children, title, subTitle, ...props }) => {
+const ModalNew: FC<TModal> = ({
+  isHeader = true,
+  isPadding = true,
+  isOpen = false,
+  onClose,
+  children,
+  title,
+  subTitle,
+  size = "m",
+  ...props
+}) => {
   const pressEsc = ({ code }: React.KeyboardEvent<HTMLInputElement>) => {
     if (code !== "Escape") {
       return
     }
-    onClose()
+
+    onClose(false)
   }
 
   return createPortal(
@@ -36,16 +52,18 @@ const ModalNew: FC<TModal> = ({ isOpen = false, onClose, children, title, subTit
         {...props}
       >
         <Styled.Overlay />
-        <Styled.WrapperContent onClick={onClose}>
-          <Styled.Content onClick={(e) => e.stopPropagation()}>
-            <Styled.Header>
-              <Styled.Logo as={Logo} />
-              <Styled.Title>
-                {title}
-                <br />
-                {subTitle}
-              </Styled.Title>
-            </Styled.Header>
+        <Styled.WrapperContent onClick={() => onClose(false)}>
+          <Styled.Content onClick={(e) => e.stopPropagation()} isPadding={isPadding} size={size}>
+            {isHeader && (
+              <Styled.Header>
+                <Styled.Logo as={Logo} />
+                <Styled.Title>
+                  {title}
+                  <br />
+                  {subTitle}
+                </Styled.Title>
+              </Styled.Header>
+            )}
             {children}
           </Styled.Content>
         </Styled.WrapperContent>

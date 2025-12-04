@@ -11,9 +11,9 @@ export const Content = styled.div`
   display: grid;
   gap: 0.875rem;
   width: 100%;
+  padding: 0 2rem 4rem 2rem;
 
   height: calc(100vh - 50px);
-  padding: 2rem;
 
   grid-template-columns: 61.8fr 9.02fr 5.58fr 23.6fr;
   grid-template-rows: 61.8fr 9.02fr 5.58fr 23.6fr;
@@ -92,7 +92,7 @@ export const ButtonGallery = styled.div`
   transition-duration: ${({ theme }) => theme.main.animation_duration};
   font-size: 1.4rem;
 
-  border-radius: 10px;
+  border-radius: 5px;
   font-weight: 600;
   padding: 1rem;
   line-height: 1.3rem;

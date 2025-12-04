@@ -20,8 +20,8 @@ export const Shadow = styled.div`
 export const Round = styled.div`
   position: relative;
   overflow: hidden;
-  width: 50vh;
-  height: 50vh;
+  width: 60vh;
+  height: 60vh;
   border-radius: 100%;
   background: ${({ theme }) => theme.main.background_white};
   border: 0.875rem solid ${({ theme }) => theme.main.background_black_extra};

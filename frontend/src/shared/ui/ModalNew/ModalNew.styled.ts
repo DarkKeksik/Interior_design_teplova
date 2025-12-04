@@ -2,6 +2,11 @@ import styled from "styled-components"
 
 type TModal = { isOpen: boolean }
 
+type TContent = {
+  isPadding?: boolean
+  size: "s" | "m" | "l"
+}
+
 export const Modal = styled.div<TModal>`
   position: fixed;
   top: 0;
@@ -35,7 +40,7 @@ export const WrapperContent = styled.div`
   padding: 1rem;
 `
 
-export const Content = styled.div`
+export const Content = styled.div<TContent>`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -43,12 +48,22 @@ export const Content = styled.div`
   gap: 1.5rem;
   text-align: center;
 
-  max-width: 640px;
+  max-width: ${({ size }) => {
+    switch (size) {
+      case "s":
+        return "320px"
+      case "m":
+        return "640px"
+      case "l":
+        return "1200px"
+    }
+  }};
+
   width: 100%;
   background-color: white;
   min-height: 55vh;
   border-radius: 5px;
-  padding: 3.5rem 1.5rem;
+  padding: ${({ isPadding }) => (isPadding ? "3.5rem 1.5rem" : "0")};
   color: ${({ theme }) => theme.main && theme.main.modal.content.colorText};
 `
 

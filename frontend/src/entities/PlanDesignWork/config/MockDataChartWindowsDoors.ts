@@ -5,7 +5,7 @@ const DataMock: Task[] = [
     start: new Date(2025, 1, 1),
     end: new Date(2025, 3, 2),
     name: "MockDataChartWindowsDoors",
-    id: "Task 0",
+    id: "Task 5",
     type: "task",
     progress: 100,
     isDisabled: true,

@@ -4,10 +4,20 @@ const linksPages = {
     link: "/",
     link_name: "Главная",
   },
-  page_gallery: {
-    id: "page_gallery",
-    link: "/gallery",
-    link_name: "Галерея",
+  page_projects: {
+    id: "page_projects",
+    link: "/projects",
+    link_name: "Проекты",
+  },
+  page_vblog: {
+    id: "vblog",
+    link: "/vblog",
+    link_name: "Видеоблог",
+  },
+  page_articles: {
+    id: "articles",
+    link: "/articles",
+    link_name: "Статьи",
   },
 }
 

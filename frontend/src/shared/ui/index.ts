@@ -10,6 +10,9 @@ export { default as ChartGantt } from "./ChartGantt/ChartGantt"
 export { default as TitleSection } from "./TitleSection/TitleSection"
 export { default as Modal } from "./Modal/Modal"
 export { default as ModalNew } from "./ModalNew/ModalNew"
+export { default as Preloader } from "./Preloader/Preloader"
+export { default as Gallery } from "./Gallery/Gallery"
+export { default as DASHVideoBlock } from "./DASHVideoBlock/DASHVideoBlock"
 
 export { default as InputPhone } from "./InputPhone/InputPhone"
 

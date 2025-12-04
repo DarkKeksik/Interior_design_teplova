@@ -6,8 +6,12 @@ type TButton = {
   onClick?: () => void
 } & PropsWithChildren
 
-const Button: FC<TButton> = ({ text, onClick, children }) => {
-  return <Styled.Button onClick={onClick}>{children || text}</Styled.Button>
+const Button: FC<TButton> = ({ text, onClick, children, ...props }) => {
+  return (
+    <Styled.Button onClick={onClick} {...props}>
+      {children || text}
+    </Styled.Button>
+  )
 }
 
 export default Button

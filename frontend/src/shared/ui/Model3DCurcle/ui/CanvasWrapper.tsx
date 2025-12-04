@@ -2,13 +2,13 @@ import type { FC } from "react"
 
 import { useState } from "react"
 
-import { useStore, useFrame } from "@react-three/fiber"
+import { useStore, useFrame, useLoader } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
-import { GLTF } from "three/addons/loaders/GLTFLoader.js"
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
 
 type TCanvasWrapper = {
-  gltf: GLTF
   isUserInteracting: boolean
+  srcModel: string
 }
 
 type TRotationConfig = {
@@ -23,11 +23,12 @@ const rotationConfig: TRotationConfig = {
   fullTurnY: 6.27,
 }
 
-export const CanvasWrapper: FC<TCanvasWrapper> = ({ isUserInteracting, gltf }) => {
-  const [rotationVector3, setRotationVector3] = useState<[number, number, number]>([0, 0, 0])
-
+export const CanvasWrapper: FC<TCanvasWrapper> = ({ isUserInteracting, srcModel }) => {
+  const [rotationVector3, setRotationVector3] = useState([0, 0, 0])
+  const { scene } = useLoader(GLTFLoader, srcModel)
   const { getState } = useStore()
   const { camera } = getState()
+
   camera.position.set(...rotationConfig.defaultCameraPositionVector3)
 
   const changeRotationCamera = () => {
@@ -50,7 +51,7 @@ export const CanvasWrapper: FC<TCanvasWrapper> = ({ isUserInteracting, gltf }) =
 
   return (
     <>
-      <primitive object={gltf.scene} scale={0.5} rotation={rotationVector3} />
+      <primitive object={scene} scale={0.5} rotation={rotationVector3} />
       <OrbitControls />
     </>
   )

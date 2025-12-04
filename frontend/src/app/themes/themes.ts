@@ -20,6 +20,12 @@ const themes = {
 
     background_table: "#2A2A2A",
 
+    preloader: {
+      color_1: "#CBA35C",
+      color_2: "#2A2A2A",
+      color_3: "#1B1B1B",
+    },
+
     modal: {
       content: {
         top: "50%",

@@ -10,10 +10,11 @@ export const TitleSection = styled.h2<TTitleSection>`
   text-transform: math-auto;
 
   padding: 0 0 1.5rem 0;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -2px;
   margin-bottom: 2.5rem;
 
+  font-family: ${({ theme }) => theme.main && theme.main.font_family_headlines};
   color: ${({ theme, isBlackColor }) =>
     isBlackColor ? theme.main.color_text_extra_2 : theme.main.color_text};
   border-bottom: 3px solid
