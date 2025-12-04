@@ -2,7 +2,7 @@ import React, { useState, type FC } from "react"
 import { Link } from "react-router-dom"
 
 import { VideoBlogPlayer } from "@entities/index"
-import { Gallery, SectionBlack, TitleSection, Button, ModalNew } from "@shared/ui"
+import { Gallery, SectionBlack, TitleSection, Button, Modal } from "@shared/ui"
 import { linksPages } from "@shared/config"
 
 import { VideoItem } from "../"
@@ -32,13 +32,18 @@ const GalleryVideo: FC<TGalleryVideo> = ({ isTitle = true, isShortGallery = true
   const [isActiveVideoBlogPlayer, setIsActiveVideoBlogPlayer] = useState(false)
 
   const onClickVideoItem = ({ id, onClick }: TOnClickVideoItem) => {
-    id && setVideoId(id as number)
-    onClick && onClick(true)
+    if (id) {
+      setVideoId(id as number)
+    }
+
+    if (onClick) {
+      onClick(true)
+    }
   }
 
   return (
     <>
-      <ModalNew
+      <Modal
         size="l"
         onClose={setIsActiveVideoBlogPlayer}
         isOpen={isActiveVideoBlogPlayer}
@@ -46,7 +51,7 @@ const GalleryVideo: FC<TGalleryVideo> = ({ isTitle = true, isShortGallery = true
         isPadding={false}
       >
         <VideoBlogPlayer activeVideoId={idVideo} isShort={true} />
-      </ModalNew>
+      </Modal>
 
       <SectionBlack typeBg="blackExtra">
         {isTitle && <TitleSection>{linksPages.page_vblog.link_name}</TitleSection>}
