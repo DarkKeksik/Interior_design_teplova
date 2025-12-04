@@ -44,7 +44,6 @@
     "input-format": "^0.3.14",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-modal": "^3.16.3",
     "react-router": "^7.9.5",
     "react-router-dom": "6.4",
     "three": "^0.181.0"
