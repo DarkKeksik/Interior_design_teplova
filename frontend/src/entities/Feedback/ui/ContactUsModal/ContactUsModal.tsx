@@ -1,6 +1,6 @@
 import type { FC } from "react"
 
-import { ModalNew } from "@shared/ui"
+import { Modal } from "@shared/ui"
 
 import { Form } from "../"
 
@@ -11,7 +11,7 @@ type TContactUsModalProps = {
 
 const ContactUsModal: FC<TContactUsModalProps> = ({ onClose, ...props }) => {
   return (
-    <ModalNew
+    <Modal
       onClose={onClose}
       id="ContactUsModal"
       title="Отправьте заявку и мы сможем обсудить"
@@ -19,7 +19,7 @@ const ContactUsModal: FC<TContactUsModalProps> = ({ onClose, ...props }) => {
       {...props}
     >
       <Form onClose={onClose} />
-    </ModalNew>
+    </Modal>
   )
 }
 
