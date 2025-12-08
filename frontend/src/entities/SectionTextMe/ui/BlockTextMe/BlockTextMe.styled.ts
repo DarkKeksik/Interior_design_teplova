@@ -9,7 +9,6 @@ export const Wrap = styled.div`
   min-height: 60vh;
   padding: 2rem;
   box-shadow: 0 0 1rem 5px #00000033 inset;
-  font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
 `
 
 export const Content = styled.div`

@@ -13,7 +13,6 @@ export const FormContainer = styled.div`
   justify-content: center;
   padding: 60px;
   box-sizing: border-box;
-  font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
 `
 
 export const Form = styled.form`

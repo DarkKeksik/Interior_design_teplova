@@ -13,7 +13,6 @@ export const Modal = styled.div<TModal>`
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
   z-index: ${({ theme }) => theme.main && theme.main.modal.overlay.zIndex};
 `
 

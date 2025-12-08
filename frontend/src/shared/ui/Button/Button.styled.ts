@@ -18,6 +18,8 @@ export const Button = styled.button`
   font-size: 13px;
   font-weight: 500;
 
+  font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
+
   &:hover {
     ${({ theme }) => css`
       border-color: ${theme.main.hover_text_button};

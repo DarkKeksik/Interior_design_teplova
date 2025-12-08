@@ -5,10 +5,10 @@ import { Link } from "react-router-dom"
 import { SectionBlack } from "@shared/ui"
 import { linksPages } from "@shared/config"
 
-import { ProjectDescription } from "../"
-import * as Styled from "./GalleryShortSection.styled.ts"
+import { ProjectDescription } from "../index.ts"
+import * as Styled from "./ProjectsShort.styled.ts"
 
-const GalleryShortSection: FC = () => {
+const ProjectsShort: FC = () => {
   return (
     <SectionBlack isPadding={false} typeBg="blackExtra">
       <Styled.Container>
@@ -40,4 +40,4 @@ const GalleryShortSection: FC = () => {
   )
 }
 
-export default GalleryShortSection
+export default ProjectsShort

@@ -1,26 +1,33 @@
 import type { FC } from "react"
 
 import { useRef, useEffect } from "react"
-import { MediaPlayer } from "dashjs"
+import { MediaPlayer, MediaPlayerClass } from "dashjs"
 
 import * as Styled from "./DASHVideoBlock.styled"
 
 type TVideoBlock = {
   source_link?: string
   autoPlay: boolean
+  url_manifest: string
+  preview_img: string
 }
 
-const url = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd"
+const url_manifest_mock = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd"
+const preview_img_mock = "http://mediapm.edgesuite.net/will/dash/temp/poster.png"
 
-const DASHVideoBlock: FC<TVideoBlock> = ({ source_link, autoPlay = false, ...props }) => {
+const DASHVideoBlock: FC<TVideoBlock> = ({
+  source_link,
+  autoPlay = false,
+  url_manifest = url_manifest_mock,
+  preview_img = preview_img_mock,
+  ...props
+}) => {
   const videoRef = useRef(null)
-  const playerDASHRef = useRef(null)
+  const playerDASHRef = useRef<MediaPlayerClass | null>(MediaPlayer().create())
 
   useEffect(() => {
     if (videoRef.current) {
-      playerDASHRef.current = MediaPlayer().create()
-      playerDASHRef.current.initialize(videoRef.current, url, autoPlay)
-      // playerDASHRef.current.isMuted(false)
+      playerDASHRef.current?.initialize(videoRef.current, url_manifest, autoPlay)
     }
 
     return () => {
@@ -29,12 +36,12 @@ const DASHVideoBlock: FC<TVideoBlock> = ({ source_link, autoPlay = false, ...pro
         playerDASHRef.current = null
       }
     }
-  }, [])
+  }, [url_manifest, autoPlay])
 
   return (
     <Styled.Wrap>
       <Styled.Video
-        poster="http://mediapm.edgesuite.net/will/dash/temp/poster.png"
+        poster={preview_img}
         ref={videoRef}
         autoPlay={autoPlay}
         muted={autoPlay}

@@ -25,7 +25,6 @@ export const Wrap = styled.div`
 `
 
 export const CopyrightNotice = styled.small`
-  font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
   font-size: 12px;
 `
 

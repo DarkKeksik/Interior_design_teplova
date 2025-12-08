@@ -7,7 +7,6 @@ type TTabItem = {
 export const Wrap = styled.div`
   display: flex;
   gap: 1.5rem;
-  font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
 `
 
 export const WrapTab = styled.div`

@@ -56,7 +56,6 @@ export const ButtonCustom = styled.button`
     border-color: #fffff0;
     background: #fffff0;
     color: #1b1b1b;
-    font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
     transition-duration: 0.3s;
 
     min-height: 2rem;

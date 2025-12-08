@@ -1,6 +1,7 @@
 export { WelcomeSection } from "./WelcomeSection"
 export { FeedbackBlock } from "./Feedback"
-export { GalleryShortSection } from "./GalleryShortSection"
+export { ProjectsList } from "./ProjectsList"
+export { ProjectsShort } from "./ProjectsShort"
 export { RequestProjectBlock } from "./RequestProject"
 export { PlanDesignWork } from "./PlanDesignWork"
 export { VideoBlogPlayer } from "./VideoBlogPlayer"

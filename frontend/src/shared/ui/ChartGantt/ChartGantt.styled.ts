@@ -53,7 +53,6 @@ export const Mount = styled.p`
 `
 
 export const ChartGantt = styled.div<TChartGantt>`
-  font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
   width: 100%;
 
   & {

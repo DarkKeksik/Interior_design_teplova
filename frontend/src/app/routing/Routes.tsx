@@ -1,8 +1,8 @@
-import { createBrowserRouter } from "react-router-dom"
+import { createBrowserRouter, Outlet } from "react-router-dom"
 
 import { PageWithLayouts } from "../layouts"
 
-import { MainPage, VideoBlogPage } from "@pages/index"
+import { MainPage, VideoBlogPage, ProjectsPage, ProjectPage } from "@pages/index"
 
 import { linksPages } from "@shared/config"
 
@@ -12,8 +12,27 @@ const router = createBrowserRouter([
     element: (
       <PageWithLayouts>
         <MainPage />
+        <Outlet />
       </PageWithLayouts>
     ),
+  },
+  {
+    path: linksPages.page_projects.link,
+    element: (
+      <PageWithLayouts>
+        <Outlet />
+      </PageWithLayouts>
+    ),
+    children: [
+      {
+        index: true,
+        element: <ProjectsPage />,
+      },
+      {
+        path: ":id",
+        element: <ProjectPage />,
+      },
+    ],
   },
   {
     path: linksPages.page_vblog.link,
