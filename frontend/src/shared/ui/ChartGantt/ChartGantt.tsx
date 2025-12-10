@@ -13,8 +13,8 @@ type TChartGantt = {
 }
 
 const ChartGantt: FC<TChartGantt> = ({ data_tasks = dataMock, ...props }) => {
-  const refHeaderChartGantt = useRef(null)
-  const refContentChart = useRef(null)
+  const refHeaderChartGantt = useRef<HTMLDivElement>(null)
+  const refContentChart = useRef<HTMLDivElement>(null)
 
   const [widthCol, setWidthCol] = useState(10)
   const [countRows, setCountRows] = useState(0)

@@ -7,14 +7,15 @@ const GlobalStyle = createGlobalStyle`
     ${reset}
     ${fontFamilies}
 
-    html {
-        font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
-    }
-
     * {
         color: ${({ theme }) => theme.main && theme.main.color_text};
         box-sizing: border-box;
     }
+    
+    body {
+        font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
+    }
+
 
     a {
         text-decoration: none;
