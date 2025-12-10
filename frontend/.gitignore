@@ -21,3 +21,5 @@ react-vite/dist
 *.njsproj
 *.sln
 *.sw?
+
+.env
