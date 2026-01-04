@@ -1,17 +1,43 @@
 import type { FC } from "react"
+import qs from "qs"
 
-import { SectionBlack } from "@shared/ui"
+import type { TProjectsInfo } from "@shared/api"
+import { hooksData } from "@shared/hooks"
+import { SectionBlack, Preloader } from "@shared/ui"
 
-import { data_projects } from "../../"
 import { ProjectItem } from "../"
 import * as Styled from "./Projects.styled"
 
 const ProjectsList: FC = () => {
+  const urlProjects = qs.stringify(
+    {
+      populate: {
+        images: {
+          fields: ["formats"],
+        },
+      },
+      sort: ["completionYear:desc"],
+    },
+    { encodeValuesOnly: true }
+  )
+
+  const { dataBackend, isLoading = true } = hooksData.useAxios<TProjectsInfo>({
+    url: `/projects?${urlProjects}`,
+  })
+
+  if (isLoading) {
+    return (
+      <SectionBlack typeBg="black" isPadding={false}>
+        <Preloader />
+      </SectionBlack>
+    )
+  }
+
   return (
     <SectionBlack typeBg="black" isPadding={false}>
       <Styled.ProjectsList>
-        {data_projects.map(({ title, description, images }) => (
-          <ProjectItem title={title} description={description} images={images} />
+        {dataBackend?.data.map((dataProject, id) => (
+          <ProjectItem {...dataProject} key={id} />
         ))}
       </Styled.ProjectsList>
     </SectionBlack>

@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
-export const Wrap = styled.div``
+export const Wrap = styled.div`
+  min-height: calc(100vh - 50px);
+`
 
 export const WrapContent = styled.div`
   display: flex;

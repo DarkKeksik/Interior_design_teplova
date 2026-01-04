@@ -12,19 +12,18 @@ type TExtraLinks = {
 
 type TVideoItem = {
   sourcePreview: string
-  sourceVideo?: string
   extraLinks?: TExtraLinks
   onClick: () => void
 }
 
-const VideoItem: FC<TVideoItem> = ({ sourcePreview, sourceVideo, extraLinks, onClick }) => {
+const VideoItem: FC<TVideoItem> = ({ sourcePreview, extraLinks, onClick }) => {
   const { linkYoutube = "https://www.youtube.com/watch?v=VQbIIDaBNMY" } = extraLinks || {}
 
   return (
     <Styled.Wrap>
       <Styled.VideoPreview>
         <Styled.VideoPlayBlock onClick={onClick}>
-          <IconPlayVideo width={70} hight={70} fill="#fffff0" />
+          <IconPlayVideo width={70} height={70} fill="#fffff0" />
         </Styled.VideoPlayBlock>
 
         <Styled.VideoServices>

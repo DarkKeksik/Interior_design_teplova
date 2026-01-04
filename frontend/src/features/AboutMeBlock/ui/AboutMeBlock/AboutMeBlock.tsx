@@ -1,6 +1,7 @@
 import type { FC } from "react"
 
 import { RequestProjectBlock } from "@entities/index"
+import { TitleSection } from "@shared/ui"
 
 import { dataAboutMe } from "../../config"
 
@@ -9,7 +10,7 @@ import * as Styled from "./AboutMeBlock.styled"
 const AboutMeBlock: FC = () => {
   return (
     <Styled.AboutMeBlock>
-      <Styled.Headline>Oбо мне</Styled.Headline>
+      <TitleSection>Oбо мне</TitleSection>
       <Styled.InfoBlocks>
         {dataAboutMe.map(({ title, description }, id) => (
           <Styled.InfoBlock key={id}>

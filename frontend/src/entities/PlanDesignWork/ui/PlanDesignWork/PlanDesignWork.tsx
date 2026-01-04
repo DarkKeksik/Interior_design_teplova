@@ -10,7 +10,7 @@ const PlanDesignWork: FC = () => {
     <>
       <BrashDrawing minPageSize={1700} maxPageSize={1800} />
       <Styled.SectionBlack as={SectionBlack} typeBg="blackExtra">
-        <TitleSection isAlignRight>Производство интерьера от договора до въезда</TitleSection>
+        <TitleSection>Производство интерьера от договора до въезда</TitleSection>
         <TabsPanel />
       </Styled.SectionBlack>
     </>

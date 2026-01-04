@@ -3,7 +3,6 @@ import type { FC } from "react"
 import { Button } from "@shared/ui"
 
 import * as Styled from "./Reviews.styled"
-import { Style } from "maplibre-gl"
 
 const Reviews: FC = () => {
   return (

@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_main_infos",
+  "info": {
+    "singularName": "page-main-info",
+    "pluralName": "page-main-infos",
+    "displayName": "PageMainInfo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

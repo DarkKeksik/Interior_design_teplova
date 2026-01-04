@@ -10,8 +10,3 @@ export const Wrap = styled.div`
   width: 100%;
   overflow: hidden;
 `
-
-export const BGVideo = styled.video`
-  min-width: 100%;
-  min-height: 100%;
-`

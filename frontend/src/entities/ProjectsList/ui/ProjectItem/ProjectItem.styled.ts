@@ -31,13 +31,12 @@ export const ProjectItem = styled.div`
 export const Title = styled.div`
   margin-bottom: 1.5rem;
   font-size: 2.2rem;
-  font-weight: 100;
+  font-weight: 600;
 `
 
 export const Description = styled.div`
   font-size: 0.9375rem;
   line-height: 1.8rem;
-  padding-left: 1.5rem;
 `
 
 export const Panel = styled.div`
@@ -50,8 +49,7 @@ export const Panel = styled.div`
 export const ProjectInfo = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  padding-left: 3rem;
+  gap: 1rem;
   min-height: 6.25rem;
 `
 
@@ -61,7 +59,7 @@ export const InfoItem = styled.div`
   justify-content: center;
   align-items: baseline;
   gap: 0.625rem;
-  padding: 2.5rem 1.5rem;
+  padding: 1.8rem 1.4rem;
   background: #1b1b1b;
   border-radius: 5px;
 `

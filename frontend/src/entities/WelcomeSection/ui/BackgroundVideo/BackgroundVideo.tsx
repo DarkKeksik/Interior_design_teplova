@@ -7,7 +7,7 @@ import { DASHVideoBlock } from "@shared/ui"
 const BackgroundVideo: FC = () => {
   return (
     <Styled.Wrap>
-      <Styled.BGVideo as={DASHVideoBlock} autoPlay loop />
+      <DASHVideoBlock autoPlay loop controls={false} />
     </Styled.Wrap>
   )
 }

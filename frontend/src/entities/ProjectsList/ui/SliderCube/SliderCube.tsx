@@ -6,10 +6,13 @@ import "swiper/css"
 import "swiper/css/effect-cube"
 import "swiper/css/pagination"
 
+import type { TImage } from "@shared/api"
+import { env } from "@shared/config"
+
 import * as Styled from "./SliderCube.styled"
 
 type TSliderCube = {
-  images: string[]
+  images: TImage[]
 }
 
 const SliderCube: FC<TSliderCube> = ({ images }) => {
@@ -33,11 +36,13 @@ const SliderCube: FC<TSliderCube> = ({ images }) => {
       }}
       modules={[EffectCube, Pagination, Autoplay]}
     >
-      {images.map((link) => (
-        <SwiperSlide>
-          <Styled.Item src={link} />
-        </SwiperSlide>
-      ))}
+      {images.map(({ formats }) => {
+        return (
+          <SwiperSlide>
+            <Styled.Item src={`${env.BACKEND_URL}${formats.large.url}`} />
+          </SwiperSlide>
+        )
+      })}
     </Styled.SliderCube>
   )
 }

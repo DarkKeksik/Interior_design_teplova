@@ -1,5 +1,15 @@
 import styled from "styled-components"
 
+export const Preloader = styled.div`
+  position: relative;
+  height: calc(100vh - 50px);
+  width: 100%;
+`
+
+export const TitleSection = styled.h2`
+  margin: 0 2rem 2.5rem 2rem;
+`
+
 export const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -42,39 +52,37 @@ const Item = styled.div`
   }
 `
 
-export const AArea = styled(Item)`
-  grid-area: A;
-  background-image: url("/img/gallery_main.jpg");
+type TProject = {
+  source: string
+}
+
+export const Project = styled(Item)<TProject>`
+  background-image: url(${({ source = "" }) => source});
   background-repeat: no-repeat;
   background-size: cover;
-  font-size: 1em;
+
+  &:nth-of-type(1) {
+    grid-area: A;
+    font-size: 1em;
+  }
+
+  &:nth-of-type(2) {
+    grid-area: B;
+    font-size: 0.9em;
+  }
+
+  &:nth-of-type(3) {
+    grid-area: C;
+    font-size: 0.8em;
+  }
+
+  &:nth-of-type(4) {
+    grid-area: D;
+    font-size: 0.5em;
+  }
 `
 
-export const BArea = styled(Item)`
-  grid-area: B;
-  background-image: url("/img/1.5-small-gallery.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-size: 0.9em;
-`
-
-export const CArea = styled(Item)`
-  grid-area: C;
-  background-image: url("/img/2x-small-gallery.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-size: 0.8em;
-`
-
-export const DArea = styled(Item)`
-  grid-area: D;
-  background-image: url("/img/2.5x-small-gallery.jfif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-size: 0.5em;
-`
-
-export const EArea = styled(Item)`
+export const WrapButtonGallery = styled(Item)`
   grid-area: E;
 `
 

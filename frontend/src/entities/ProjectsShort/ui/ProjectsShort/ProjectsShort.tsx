@@ -2,38 +2,42 @@ import type { FC } from "react"
 
 import { Link } from "react-router-dom"
 
-import { SectionBlack } from "@shared/ui"
-import { linksPages } from "@shared/config"
+import type { TProjectsInfo } from "@shared/api"
+import { hooksData } from "@shared/hooks"
+import { SectionBlack, TitleSection } from "@shared/ui"
+import { linksPages, env } from "@shared/config"
 
 import { ProjectDescription } from "../index.ts"
 import * as Styled from "./ProjectsShort.styled.ts"
 
 const ProjectsShort: FC = () => {
+  const { dataBackend, isLoading } = hooksData.useAxios<TProjectsInfo>({
+    url: "/projects?populate=images&pagination[pageSize]=4&sort=completionYear:desc",
+  })
+
   return (
     <SectionBlack isPadding={false} typeBg="blackExtra">
+      <Styled.TitleSection as={TitleSection}>Проекты</Styled.TitleSection>
       <Styled.Container>
         <Styled.Content>
-          <Styled.AArea>
-            <ProjectDescription />
-          </Styled.AArea>
+          {dataBackend?.data.map(({ images, ...projectInfo }, id) => (
+            <Styled.Project
+              key={id}
+              source={`${env.BACKEND_URL}${images?.[0]?.formats?.large?.url ?? ""}`}
+            >
+              <ProjectDescription
+                isLoading={isLoading}
+                {...projectInfo}
+                isDescription={id < 2 ? true : false}
+              />
+            </Styled.Project>
+          ))}
 
-          <Styled.BArea>
-            <ProjectDescription />
-          </Styled.BArea>
-
-          <Styled.CArea>
-            <ProjectDescription isDescription={false} />
-          </Styled.CArea>
-
-          <Styled.DArea>
-            <ProjectDescription isDescription={false} />
-          </Styled.DArea>
-
-          <Styled.EArea>
+          <Styled.WrapButtonGallery>
             <Styled.ButtonGallery as={Link} to={linksPages.page_projects.link}>
               Больше <br /> проектов
             </Styled.ButtonGallery>
-          </Styled.EArea>
+          </Styled.WrapButtonGallery>
         </Styled.Content>
       </Styled.Container>
     </SectionBlack>

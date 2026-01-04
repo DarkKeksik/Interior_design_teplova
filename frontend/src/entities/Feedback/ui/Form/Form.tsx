@@ -5,9 +5,10 @@ import * as Styled from "./Form.styed"
 
 type TForm = {
   onClose: React.Dispatch<React.SetStateAction<boolean>>
+  buttonSubmitName?: string
 }
 
-const Form: FC<TForm> = ({ onClose }) => {
+const Form: FC<TForm> = ({ onClose, buttonSubmitName = "Отправить заявку" }) => {
   const [phoneNumber, setPhoneNumber] = useState("")
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState("")
@@ -70,7 +71,7 @@ const Form: FC<TForm> = ({ onClose }) => {
       </Styled.Label>
 
       <Styled.SubmitButton type="submit" disabled={isSubmitted || !phoneNumber.trim()}>
-        {isSubmitted ? "Отправлено!" : "Позвоните мне"}
+        {isSubmitted ? "Отправлено!" : buttonSubmitName}
       </Styled.SubmitButton>
 
       {error && <Styled.ErrorMessage>{error}</Styled.ErrorMessage>}

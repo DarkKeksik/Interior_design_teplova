@@ -7,9 +7,11 @@ import * as Styled from "./DASHVideoBlock.styled"
 
 type TVideoBlock = {
   source_link?: string
-  autoPlay: boolean
-  url_manifest: string
-  preview_img: string
+  autoPlay?: boolean
+  url_manifest?: string
+  preview_img?: string
+  loop?: boolean
+  controls?: boolean
 }
 
 const url_manifest_mock = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd"
@@ -20,6 +22,7 @@ const DASHVideoBlock: FC<TVideoBlock> = ({
   autoPlay = false,
   url_manifest = url_manifest_mock,
   preview_img = preview_img_mock,
+  loop = false,
   ...props
 }) => {
   const videoRef = useRef(null)

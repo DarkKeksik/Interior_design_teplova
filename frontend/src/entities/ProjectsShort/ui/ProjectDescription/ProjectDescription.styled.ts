@@ -1,7 +1,5 @@
 import styled from "styled-components"
 
-import { Button } from "@shared/ui"
-
 export const Wrap = styled.div`
   font-size: 1em;
   opacity: 0;

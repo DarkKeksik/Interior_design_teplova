@@ -2,8 +2,12 @@ import type { PropsWithChildren, FC } from "react"
 
 import * as Styled from "./Headline.styled"
 
-const Headline: FC<PropsWithChildren> = ({ children }) => {
-  return <Styled.Headline>{children}</Styled.Headline>
+type THeadline = {
+  size?: "s" | "m" | "l"
+} & PropsWithChildren
+
+const Headline: FC<THeadline> = ({ children, size = "l" }) => {
+  return <Styled.Headline size={size}>{children}</Styled.Headline>
 }
 
 export default Headline

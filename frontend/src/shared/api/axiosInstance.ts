@@ -1,5 +1,7 @@
 import axios from "axios"
 
-const instance = axios.create({ baseURL: "/api" })
+import { env } from "@shared/config"
 
-export default instance
+const axiosInstance = axios.create({ baseURL: env.API_URL })
+
+export default axiosInstance

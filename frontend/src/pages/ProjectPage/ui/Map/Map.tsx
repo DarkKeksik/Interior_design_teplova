@@ -45,7 +45,7 @@ const MapProjectLocation: FC = () => {
         style={{ width: size?.width, height: size?.height }}
       >
         <Marker {...coordinatesVladivostok} anchor="top">
-          <IconPin width={20} hight={20} fill="#272726" />
+          <IconPin width={20} height={20} fill="#272726" />
         </Marker>
         <Styled.Popup
           as={Popup}

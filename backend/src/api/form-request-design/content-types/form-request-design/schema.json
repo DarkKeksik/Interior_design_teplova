@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "form_request_designs",
+  "info": {
+    "singularName": "form-request-design",
+    "pluralName": "form-request-designs",
+    "displayName": "FormRequestDesign"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Отправьте заявку и мы сможем обсудить проект вашей мечты"
+    },
+    "buttonSendName": {
+      "type": "string",
+      "default": "Отправить заявку"
+    }
+  }
+}

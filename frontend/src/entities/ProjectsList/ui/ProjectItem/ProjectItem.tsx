@@ -2,18 +2,22 @@ import type { FC } from "react"
 
 import { Link } from "react-router-dom"
 
+import type { TProjectInfo } from "@shared/api"
 import { Button } from "@shared/ui"
 
 import { SliderCude } from "../"
 import * as Styled from "./ProjectItem.styled"
 
-type TProjectItem = {
-  title: string
-  description: string
-  images: string[]
-}
-
-const ProjectItem: FC<TProjectItem> = ({ title, description, images }) => {
+const ProjectItem: FC<TProjectInfo> = ({
+  title,
+  description,
+  images = [],
+  costProject,
+  totalArea,
+  implementationPeriod,
+  slug,
+  completionYear,
+}) => {
   return (
     <Styled.ProjectItem>
       <Styled.ContentText>
@@ -22,21 +26,25 @@ const ProjectItem: FC<TProjectItem> = ({ title, description, images }) => {
 
         <Styled.ProjectInfo>
           <Styled.InfoItem>
+            <Styled.TitleInfoItem>Год сдачи</Styled.TitleInfoItem>
+            <Styled.ValueInfoItem>{completionYear}</Styled.ValueInfoItem>
+          </Styled.InfoItem>
+          <Styled.InfoItem>
             <Styled.TitleInfoItem>Стоимость проекта</Styled.TitleInfoItem>
-            <Styled.ValueInfoItem>2 500 000 ₽</Styled.ValueInfoItem>
+            <Styled.ValueInfoItem>{costProject} ₽</Styled.ValueInfoItem>
           </Styled.InfoItem>
           <Styled.InfoItem>
             <Styled.TitleInfoItem>Срок реализации</Styled.TitleInfoItem>
-            <Styled.ValueInfoItem>2 года и 3 мес</Styled.ValueInfoItem>
+            <Styled.ValueInfoItem>{implementationPeriod}</Styled.ValueInfoItem>
           </Styled.InfoItem>
           <Styled.InfoItem>
             <Styled.TitleInfoItem>Размеры проекта</Styled.TitleInfoItem>
-            <Styled.ValueInfoItem>26 м²</Styled.ValueInfoItem>
+            <Styled.ValueInfoItem>{totalArea} м²</Styled.ValueInfoItem>
           </Styled.InfoItem>
         </Styled.ProjectInfo>
 
         <Styled.Panel>
-          <Link to="/projects/1">
+          <Link to={`/projects/${slug}`}>
             <Styled.Button as={Button}>Подробней</Styled.Button>
           </Link>
         </Styled.Panel>

@@ -13,10 +13,9 @@ const calcPercentageFromNumber = (number: number, maxPageSize: number) => {
 type TBrashDrawing = {
   minPageSize?: number
   maxPageSize?: number
-  leftToRight?: boolean
 }
 
-const BrashDrawing: FC<TBrashDrawing> = ({ minPageSize = 0, maxPageSize = 600, leftToRight }) => {
+const BrashDrawing: FC<TBrashDrawing> = ({ minPageSize = 0, maxPageSize = 600 }) => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true })
   }, [])

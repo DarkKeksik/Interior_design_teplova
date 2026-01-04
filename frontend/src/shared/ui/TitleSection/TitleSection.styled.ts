@@ -6,7 +6,7 @@ type TTitleSection = {
 }
 
 export const TitleSection = styled.h2<TTitleSection>`
-  font-size: 2.7rem;
+  font-size: 2.4rem;
   text-transform: math-auto;
 
   padding: 0 0 1.5rem 0;

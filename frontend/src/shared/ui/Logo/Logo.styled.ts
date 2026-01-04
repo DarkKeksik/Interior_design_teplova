@@ -14,4 +14,10 @@ export const Logo = styled.div`
   color: {
     ${({ theme }) => theme.main.color_text_extra}
   }
+
+  transition-duration: 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `

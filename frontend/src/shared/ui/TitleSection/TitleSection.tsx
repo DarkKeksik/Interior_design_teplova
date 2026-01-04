@@ -4,9 +4,14 @@ import * as Styled from "./TitleSection.styled"
 
 type TTitleSection = { isAlignRight?: boolean; isBlack?: boolean } & PropsWithChildren
 
-const TitleSection: FC<TTitleSection> = ({ children, isAlignRight = false, isBlack = false }) => {
+const TitleSection: FC<TTitleSection> = ({
+  children,
+  isAlignRight = false,
+  isBlack = false,
+  ...props
+}) => {
   return (
-    <Styled.TitleSection isRight={isAlignRight} isBlackColor={isBlack}>
+    <Styled.TitleSection isRight={isAlignRight} isBlackColor={isBlack} {...props}>
       {children}
     </Styled.TitleSection>
   )

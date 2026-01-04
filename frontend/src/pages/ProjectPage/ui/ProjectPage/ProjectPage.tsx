@@ -1,9 +1,13 @@
 import type { FC } from "react"
 import { useLayoutEffect } from "react"
+import { useParams } from "react-router-dom"
+import qs from "qs"
 
-import { Headline, SectionBlack } from "@shared/ui"
+import type { TProjectsInfo } from "@shared/api"
+import { Headline, SectionBlack, Preloader } from "@shared/ui"
+import { hooksData } from "@shared/hooks"
 
-import { Gallery, Reviews, Map, ProjectInformation } from "../"
+import { Gallery, ProjectInformation } from "../"
 import * as Styled from "./ProjectPage.styled"
 
 const ProjectPage: FC = () => {
@@ -15,19 +19,46 @@ const ProjectPage: FC = () => {
     })
   }, [])
 
+  const { slug } = useParams()
+  const query = qs.stringify(
+    {
+      populate: {
+        images: {
+          fields: ["formats"],
+        },
+      },
+      filters: {
+        slug: { $eq: slug },
+      },
+    },
+    { encodeValuesOnly: true }
+  )
+
+  const { dataBackend, isLoading } = hooksData.useAxios<TProjectsInfo>({
+    url: `/projects?${query}`,
+  })
+
+  if (isLoading) {
+    return (
+      <Styled.Wrap>
+        <Preloader />
+      </Styled.Wrap>
+    )
+  }
+
   return (
     <Styled.Wrap>
-      <Headline>Светлая кухня в ЖК сахарный ключ</Headline>
+      <Headline size="m">Проект "{dataBackend?.data[0]?.title}"</Headline>
       <SectionBlack isPadding={false}>
         <Styled.WrapContent>
           <Styled.LeftBlock>
-            <Gallery />
+            <Gallery images={dataBackend?.data[0]?.images as any} />
           </Styled.LeftBlock>
 
           <Styled.RightBlock>
-            <ProjectInformation />
-            <Map />
-            <Reviews />
+            <ProjectInformation {...(dataBackend?.data[0] as any)} />
+            {/* <Map />
+            <Reviews /> */}
           </Styled.RightBlock>
         </Styled.WrapContent>
       </SectionBlack>

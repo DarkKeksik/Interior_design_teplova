@@ -1,16 +1,50 @@
 import type { FC } from "react"
+import { useMemo } from "react"
 
+import type { TProjectInfo } from "@shared/api"
 import { projectInformation } from "@pages/ProjectPage/config/data"
 
 import * as Styled from "./ProjectInformation.styled"
 
-const ProjectInformation: FC = () => {
+const ProjectInformation: FC<TProjectInfo> = ({
+  title,
+  description,
+  costProject,
+  totalArea,
+  implementationPeriod,
+  completionYear,
+}) => {
+  const detailsProjectBackend = useMemo(() => {
+    return [
+      {
+        icon: projectInformation[0].icon,
+        name: projectInformation[0].name,
+        value: costProject,
+      },
+      {
+        icon: projectInformation[1].icon,
+        name: projectInformation[1].name,
+        value: `${totalArea} м² `,
+      },
+      {
+        icon: projectInformation[2].icon,
+        name: projectInformation[2].name,
+        value: completionYear,
+      },
+      {
+        icon: projectInformation[3].icon,
+        name: projectInformation[3].name,
+        value: implementationPeriod,
+      },
+    ]
+  }, [costProject, totalArea, implementationPeriod, completionYear])
+
   return (
     <Styled.ProjectInformation>
-      <Styled.Title>Светлая кухня в ЖК сахарный ключ</Styled.Title>
+      <Styled.Title>{title}</Styled.Title>
 
       <Styled.DescriptionBlock>
-        {projectInformation.map(({ icon, name, value }, id) => (
+        {detailsProjectBackend.map(({ icon, name, value }, id) => (
           <Styled.DescriptionItem key={id}>
             <Styled.DescriptionIcon as={icon} />
 
@@ -22,10 +56,7 @@ const ProjectInformation: FC = () => {
         ))}
       </Styled.DescriptionBlock>
 
-      <Styled.TextDescription>
-        Вся сантехника подобранна dom apex, керамогранит стена, пол - PAMESA MANAOS DARK 600x1200mm
-        кастомная раковина с щелевым изливом XLight XTone Urbatek, aged dark nature 1020x2500mm.
-      </Styled.TextDescription>
+      <Styled.TextDescription>{description}</Styled.TextDescription>
     </Styled.ProjectInformation>
   )
 }

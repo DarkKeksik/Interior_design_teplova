@@ -31,6 +31,6 @@ const tabPanelData = [
     isActive: false,
     Chart: () => <Charts.ChartFurnitureAppliances />,
   },
-]
+] as const
 
 export default tabPanelData

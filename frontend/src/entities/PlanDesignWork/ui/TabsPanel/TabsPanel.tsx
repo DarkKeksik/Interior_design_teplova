@@ -39,19 +39,20 @@ const TabsPanel: FC = () => {
       <Styled.WrapTab>
         <Styled.Subtite>План работ</Styled.Subtite>
         <Styled.Tab>
-          {tabItems.map(({ titleTab, isActive, idTab }) => (
-            <Styled.TabItem
-              isActive={isActive}
-              key={idTab}
-              onClick={() => {
-                setTabItems((prev) =>
-                  setTabActive({ tabsData: tabPanelData, selectedTabId: idTab })
-                )
-              }}
-            >
-              {titleTab}
-            </Styled.TabItem>
-          ))}
+          {
+            // @ts-ignore
+            tabItems.map(({ titleTab, isActive, idTab }) => (
+              <Styled.TabItem
+                isActive={isActive}
+                key={idTab}
+                onClick={() => {
+                  setTabItems(() => setTabActive({ tabsData: tabPanelData, selectedTabId: idTab }))
+                }}
+              >
+                {titleTab}
+              </Styled.TabItem>
+            ))
+          }
         </Styled.Tab>
       </Styled.WrapTab>
       <ActiveChart />

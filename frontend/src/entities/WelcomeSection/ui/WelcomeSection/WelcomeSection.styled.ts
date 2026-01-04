@@ -37,7 +37,10 @@ export const Content = styled.div`
   z-index: 2;
 `
 
-export const Texts = styled.div``
+export const Texts = styled.div`
+  position: relative;
+  min-height: 100px;
+`
 
 export const WrapModel3DCurcle = styled.div`
   height: 100%;

@@ -53,7 +53,7 @@ export const Content = styled.div<TContent>`
       case "s":
         return "320px"
       case "m":
-        return "640px"
+        return "620px"
       case "l":
         return "1200px"
     }
