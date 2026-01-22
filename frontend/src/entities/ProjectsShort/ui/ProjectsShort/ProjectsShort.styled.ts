@@ -1,4 +1,9 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+
+type TProject = {
+  source?: string
+  isVisibleDescription?: boolean
+}
 
 export const Preloader = styled.div`
   position: relative;
@@ -36,7 +41,7 @@ export const Content = styled.div`
   background: ${({ theme }) => theme.main.background_black_extra};
 `
 
-const Item = styled.div`
+const Item = styled.div<TProject>`
   position: relative;
 
   display: flex;
@@ -47,14 +52,18 @@ const Item = styled.div`
   border-radius: 5px;
   overflow: hidden;
 
+  ${({ isVisibleDescription = false }) => {
+    return css`
+      div {
+        opacity: ${isVisibleDescription ? 1 : 0};
+      }
+    `
+  }}
+
   &:hover div {
     opacity: 1;
   }
 `
-
-type TProject = {
-  source: string
-}
 
 export const Project = styled(Item)<TProject>`
   background-image: url(${({ source = "" }) => source});

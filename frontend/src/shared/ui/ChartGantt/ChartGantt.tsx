@@ -58,6 +58,7 @@ const ChartGantt: FC<TChartGantt> = ({ data_tasks = dataMock, ...props }) => {
         </Styled.RowsCustom>
 
         <Gantt
+          fontFamily="Montserrat"
           viewMode={ViewMode.Month}
           locale="ru"
           tasks={data_tasks}

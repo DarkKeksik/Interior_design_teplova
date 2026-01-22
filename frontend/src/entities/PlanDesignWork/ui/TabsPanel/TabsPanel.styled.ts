@@ -20,7 +20,7 @@ export const WrapTab = styled.div`
 `
 
 export const Subtite = styled.h3`
-  color: #1b1b1b;
+  color: ${({ theme }) => theme.main.color_white};
   font-size: 1.4rem;
   font-weight: 500;
   padding: 0.5rem 0;

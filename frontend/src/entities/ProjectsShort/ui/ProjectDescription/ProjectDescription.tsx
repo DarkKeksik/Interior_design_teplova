@@ -13,9 +13,11 @@ import * as Styled from "./ProjectDescription.styled"
 type TProjectDescription = {
   isDescription?: boolean
   isLoading: boolean
+  isVisible?: boolean
 } & TProjectInfo
 
 export const ProjectDescription: FC<TProjectDescription> = ({
+  isVisible = false,
   isDescription = true,
   title,
   description,

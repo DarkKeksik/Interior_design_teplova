@@ -6,6 +6,10 @@ export const Wrap = styled.div`
   border-radius: 5px;
 `
 
+export const Preview = styled.img`
+  min-height: 270px;
+`
+
 export const VideoServices = styled.div`
   width: 100%;
 

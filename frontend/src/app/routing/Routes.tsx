@@ -41,6 +41,16 @@ const router = createBrowserRouter([
         <VideoBlogPage />
       </PageWithLayouts>
     ),
+    children: [
+      {
+        index: true,
+        element: <VideoBlogPage />,
+      },
+      {
+        path: ":slug",
+        element: <VideoBlogPage />,
+      },
+    ],
   },
   {
     path: "*",

@@ -14,6 +14,10 @@ const animationSpin = keyframes`
       }
 `
 
+export const Wrap = styled.div`
+  position: relative;
+`
+
 export const Preloader = styled.div`
   position: absolute;
   top: 0;

@@ -32,7 +32,7 @@ const VideoItem: FC<TVideoItem> = ({ sourcePreview, extraLinks, onClick }) => {
           </Styled.LinkVideoService>
         </Styled.VideoServices>
 
-        <img src={sourcePreview} />
+        <Styled.Preview src={sourcePreview} />
       </Styled.VideoPreview>
     </Styled.Wrap>
   )

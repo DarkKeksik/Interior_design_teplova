@@ -24,4 +24,4 @@ export const projectInformation = [
     name: "Время реализации",
     value: "2 года 3 месяца",
   },
-]
+] as const

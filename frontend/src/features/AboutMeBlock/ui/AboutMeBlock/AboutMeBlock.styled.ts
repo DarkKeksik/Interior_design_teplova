@@ -1,5 +1,10 @@
 import styled from "styled-components"
 
+export const WrapPreloader = styled.div`
+  position: relative;
+  min-height: 200px;
+`
+
 export const AboutMeBlock = styled.section`
   background: ${({ theme }) => theme.main.background_black};
   font-family: ${({ theme }) => theme.main.font_family_headlines};
@@ -26,10 +31,7 @@ export const Title = styled.div`
 `
 
 export const Description = styled.div`
-  span,
-  p {
-    color: #fff0f0a3;
-    font-size: 0.875rem;
-    line-height: 1.1rem;
-  }
+  color: #fff0f0a3;
+  font-size: 0.875rem;
+  line-height: 1.1rem;
 `

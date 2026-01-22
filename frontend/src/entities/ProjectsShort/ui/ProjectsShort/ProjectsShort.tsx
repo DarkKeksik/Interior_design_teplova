@@ -22,6 +22,7 @@ const ProjectsShort: FC = () => {
         <Styled.Content>
           {dataBackend?.data.map(({ images, ...projectInfo }, id) => (
             <Styled.Project
+              isVisibleDescription={id < 1}
               key={id}
               source={`${env.BACKEND_URL}${images?.[0]?.formats?.large?.url ?? ""}`}
             >

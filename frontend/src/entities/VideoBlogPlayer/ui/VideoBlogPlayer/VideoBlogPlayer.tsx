@@ -1,54 +1,57 @@
 import type { FC } from "react"
+import { useMemo } from "react"
+import qs from "qs"
 
-import { DASHVideoBlock } from "@shared/ui"
+import { DASHVideoBlock, Preloader } from "@shared/ui"
+import { hooksData } from "@shared/hooks"
 
-import IconPlayVideo from "../../assets/icon_video.svg?react"
+import { VideoPreviews } from "../"
 import * as Styled from "./VideoBlogPlayer.styled"
 
 type TVideoBlogPlayer = {
-  activeVideoId?: number | null
   isShort?: boolean
+  idVideo?: string
 }
 
-const previews = [
-  "./img/gallery_main.jpg",
-  "./img/1.5-small-gallery.jpg",
-  "./img/2x-small-gallery.jpg",
-  "./img/2.5x-small-gallery.jfif",
-  "./img/gallery_main.jpg",
-]
+const VideoBlogPlayer: FC<TVideoBlogPlayer> = ({ idVideo, isShort = false, ...props }) => {
+  const queryStringCurrentVideo = useMemo(() => {
+    return qs.stringify({ populate: ["preview", "video"] }, { encodeValuesOnly: true })
+  }, [])
 
-const VideoBlogPlayer: FC<TVideoBlogPlayer> = ({ isShort = false, ...props }) => {
+  const { dataBackend: dataBackendVideoCurrent, isLoading: isLoadingVideoCurrent } =
+    hooksData.useAxios({
+      url: `/videos/${idVideo}?${queryStringCurrentVideo}`,
+      dependencies: [idVideo],
+    })
+
+  const { data } = dataBackendVideoCurrent || {}
+  const { preview, name, description, createdAt } = data || {}
+  const { formats } = preview || {}
+  const { medium } = formats || {}
+  const { url: previewVideoCurrent } = medium || {}
+
   return (
     <Styled.Wrap {...props}>
       <Styled.Content>
         <Styled.WrapVideoBlock>
-          <Styled.VideoBlock as={DASHVideoBlock} controls />
+          <Styled.VideoBlock as={DASHVideoBlock} controls previewImg={previewVideoCurrent} />
         </Styled.WrapVideoBlock>
+
         <Styled.Information>
-          <Styled.Header>
-            <Styled.Title>Светлая кухня в ЖК сахарный ключ</Styled.Title>
-            <Styled.PublishDataTime>02.12.25 | 17:57</Styled.PublishDataTime>
-          </Styled.Header>
-          <Styled.Description>
-            Вся сантехника подобранна dom apex, керамогранит стена, пол - PAMESA MANAOS DARK
-            600x1200mm кастомная раковина с щелевым изливом XLight XTone Urbatek, aged dark nature
-            1020x2500mm.
-          </Styled.Description>
+          {isLoadingVideoCurrent ? (
+            <Preloader />
+          ) : (
+            <>
+              <Styled.Header>
+                <Styled.Title>{name}</Styled.Title>
+                <Styled.PublishDataTime>{createdAt}</Styled.PublishDataTime>
+              </Styled.Header>
+              <Styled.Description>{description}</Styled.Description>
+            </>
+          )}
         </Styled.Information>
       </Styled.Content>
-
-      <Styled.ListVideos isShort={isShort}>
-        {previews.map((item, id) => (
-          <Styled.WrapPreview key={id}>
-            <Styled.BackgroundButtonPlay>
-              <IconPlayVideo width="3rem" height="3rem" />
-            </Styled.BackgroundButtonPlay>
-            <Styled.Preview src={item} />
-            <Styled.TitlePreview>Светлая кухня в ЖК сахарный ключ</Styled.TitlePreview>
-          </Styled.WrapPreview>
-        ))}
-      </Styled.ListVideos>
+      <VideoPreviews isShort={isShort} idCurrentVideo={idVideo} />
     </Styled.Wrap>
   )
 }
