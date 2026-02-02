@@ -12,6 +12,8 @@ export { default as Modal } from "./Modal/Modal"
 export { default as Preloader } from "./Preloader/Preloader"
 export { default as Gallery } from "./Gallery/Gallery"
 export { default as DASHVideoBlock } from "./DASHVideoBlock/DASHVideoBlock"
+export { default as MobileMenu } from "./MobileMenu/MobileMenu"
+export { default as NotFound } from "./NotFound/NotFound"
 
 export { default as InputPhone } from "./InputPhone/InputPhone"
 

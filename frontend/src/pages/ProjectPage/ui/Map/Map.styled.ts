@@ -1,8 +1,13 @@
 import styled from "styled-components"
+import { media } from "@app/styles/media.styled"
 
 export const Wrap = styled.div`
   min-height: calc(100vh - (50px));
   position: relative;
+
+  ${media.mobile} {
+    min-height: 300px;
+  }
 `
 
 export const Map = styled.div``
@@ -23,6 +28,14 @@ export const Popup = styled.div`
 
     .maplibregl-marker {
       top: 5px !important;
+    }
+
+    ${media.mobile} {
+      .maplibregl-popup-content {
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+        padding: 0.75rem;
+      }
     }
   }
 `

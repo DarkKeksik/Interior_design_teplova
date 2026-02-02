@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { media } from "@app/styles/media.styled"
 
 export const Logo = styled.div`
   display: flex;
@@ -19,5 +20,10 @@ export const Logo = styled.div`
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  ${media.mobile} {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
   }
 `

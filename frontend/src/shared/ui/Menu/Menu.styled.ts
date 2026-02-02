@@ -1,9 +1,14 @@
 import styled from "styled-components"
+import { media } from "@app/styles/media.styled"
 
 export const Menu = styled.nav`
   display: flex;
   height: 100%;
   z-index: 2;
+
+  ${media.mobile} {
+    display: none;
+  }
 `
 
 export const Item = styled.a`
@@ -14,6 +19,7 @@ export const Item = styled.a`
   position: relative;
   overflow: hidden;
   padding: 0 1rem;
+  white-space: nowrap;
 
   font-size: 13px;
   font-family: ${({ theme }) => theme.main.font_family_text};

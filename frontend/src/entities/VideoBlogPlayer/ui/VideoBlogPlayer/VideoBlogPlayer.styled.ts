@@ -1,4 +1,5 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
+import { media } from "@app/styles/media.styled"
 
 export const Wrap = styled.div`
   display: grid;
@@ -7,6 +8,10 @@ export const Wrap = styled.div`
   background: #141414;
   font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
   width: 100%;
+
+  ${media.mobile} {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const VideoBlock = styled.video`

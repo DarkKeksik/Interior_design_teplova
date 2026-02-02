@@ -1,13 +1,22 @@
 import styled from "styled-components"
+import { media } from "@app/styles/media.styled"
 
 export const Wrap = styled.div`
   min-height: calc(100vh - 50px);
+
+  ${media.mobile} {
+    min-height: calc(100vh - 60px);
+  }
 `
 
 export const WrapContent = styled.div`
   display: flex;
   height: 100%;
   width: 100%;
+
+  ${media.mobile} {
+    flex-direction: column;
+  }
 `
 
 export const LeftBlock = styled.div`
@@ -18,6 +27,13 @@ export const LeftBlock = styled.div`
   top: 50px;
   height: 100%;
   width: 50%;
+
+  ${media.mobile} {
+    position: relative;
+    top: 0;
+    width: 100%;
+    min-height: 300px;
+  }
 `
 
 export const RightBlock = styled.div`
@@ -25,8 +41,16 @@ export const RightBlock = styled.div`
   box-shadow: -10px 0 10px #00000082;
   overflow: hidden;
   z-index: 0;
+
+  ${media.mobile} {
+    box-shadow: none;
+  }
 `
 
 export const InfoContent = styled.div`
   padding: 0 1.5rem;
+
+  ${media.mobile} {
+    padding: 0 1rem;
+  }
 `

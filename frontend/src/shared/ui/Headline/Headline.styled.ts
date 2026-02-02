@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components"
+import { media } from "../../../app/styles/media.styled"
 
 type TSizes = { s: "s"; m: "m"; l: "l" }
 
@@ -33,4 +34,27 @@ export const Headline = styled.h1<THeadline>`
         `
     }
   }}
+
+  ${media.mobile} {
+    font-size: 1.5rem;
+    padding: 2rem 1rem;
+    letter-spacing: -1px;
+
+    ${({ size }) => {
+      switch (size) {
+        case "s":
+          return css`
+            font-size: 0.875rem;
+          `
+        case "m":
+          return css`
+            font-size: 1.5rem;
+          `
+        case "l":
+          return css`
+            font-size: 2rem;
+          `
+      }
+    }}
+  }
 `

@@ -46,7 +46,10 @@ const themes = {
       },
     },
   },
-
+  burgerMenu: {
+    background: "#FFFFF0",
+    colorText: "#CBA35C",
+  },
   dark: {},
 }
 

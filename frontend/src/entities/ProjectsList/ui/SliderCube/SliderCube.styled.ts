@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { media } from "../../../../app/styles/media.styled"
 
 export const SliderCube = styled.div`
   position: relative;
@@ -31,10 +32,20 @@ export const SliderCube = styled.div`
     background: #262626;
     padding: 1rem;
     border-radius: 100px;
+
+    ${media.mobile} {
+      display: none;
+    }
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    height: 480px;
   }
 `
 
 export const Item = styled.img`
   height: 100%;
   width: 100%;
+  object-fit: cover;
 `

@@ -5,6 +5,7 @@ import { PageWithLayouts } from "../layouts"
 import { MainPage, VideoBlogPage, ProjectsPage, ProjectPage } from "@pages/index"
 
 import { linksPages } from "@shared/config"
+import { NotFound } from "@shared/ui"
 
 const router = createBrowserRouter([
   {
@@ -54,7 +55,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <div>404</div>,
+    element: <NotFound />,
   },
 ])
 

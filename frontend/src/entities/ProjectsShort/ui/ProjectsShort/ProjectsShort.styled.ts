@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components"
+import { media } from "@app/styles/media.styled"
 
 type TProject = {
   source?: string
@@ -13,6 +14,11 @@ export const Preloader = styled.div`
 
 export const TitleSection = styled.h2`
   margin: 0 2rem 2.5rem 2rem;
+
+  ${media.mobile} {
+    margin: 0 1rem 1.5rem 1rem;
+    font-size: 1.5rem;
+  }
 `
 
 export const Container = styled.div`
@@ -39,6 +45,20 @@ export const Content = styled.div`
     "A D D C";
 
   background: ${({ theme }) => theme.main.background_black_extra};
+
+  ${media.mobile} {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "A"
+      "B"
+      "C"
+      "D"
+      "E";
+    padding: 0 1rem 2rem 1rem;
+    height: auto;
+    gap: 0.5rem;
+  }
 `
 
 const Item = styled.div<TProject>`
@@ -89,6 +109,28 @@ export const Project = styled(Item)<TProject>`
     grid-area: D;
     font-size: 0.5em;
   }
+
+  ${media.mobile} {
+    &:nth-of-type(1) {
+      font-size: 0.8em;
+      min-height: 250px;
+    }
+
+    &:nth-of-type(2) {
+      font-size: 0.7em;
+      min-height: 150px;
+    }
+
+    &:nth-of-type(3) {
+      font-size: 0.7em;
+      min-height: 150px;
+    }
+
+    &:nth-of-type(4) {
+      font-size: 0.6em;
+      min-height: 120px;
+    }
+  }
 `
 
 export const WrapButtonGallery = styled(Item)`
@@ -118,5 +160,11 @@ export const ButtonGallery = styled.div`
     background: ${({ theme }) => theme.main.hover_background_button};
     color: ${({ theme }) => theme.main.hover_text_button};
     border-color: ${({ theme }) => theme.main.hover_text_button};
+  }
+
+  ${media.mobile} {
+    font-size: 1rem;
+    line-height: 1.1rem;
+    padding: 0.75rem;
   }
 `

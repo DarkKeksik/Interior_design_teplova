@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { media } from "@app/styles/media.styled"
 
 type TTabItem = {
   isActive?: boolean
@@ -7,6 +8,10 @@ type TTabItem = {
 export const Wrap = styled.div`
   display: flex;
   gap: 1.5rem;
+
+  ${media.mobile} {
+    flex-direction: column;
+  }
 `
 
 export const WrapTab = styled.div`

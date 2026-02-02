@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { media } from "@app/styles/media.styled"
 
 export const WrapPreview = styled.div`
   position: relative;
@@ -15,6 +16,10 @@ export const Preview = styled.img`
   width: 100%;
   height: 9.375rem;
   border-radius: 10px;
+
+  ${media.mobile} {
+    object-fit: cover;
+  }
 `
 
 export const TitlePreview = styled.p`

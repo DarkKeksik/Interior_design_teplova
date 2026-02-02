@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components"
+import { media } from "@app/styles/media.styled"
 
 export const Button = styled.button`
   border: 2px solid;
@@ -19,6 +20,13 @@ export const Button = styled.button`
   font-weight: 500;
 
   font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
+
+  ${media.mobile} {
+    font-size: 12px;
+    min-width: 80px;
+    min-height: 1.75rem;
+    padding: 0 0.75rem;
+  }
 
   &:hover {
     ${({ theme }) => css`

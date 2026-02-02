@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { media } from "@app/styles/media.styled"
 
 export const FormContainer = styled.div`
   position: relative;
@@ -13,6 +14,15 @@ export const FormContainer = styled.div`
   justify-content: center;
   padding: 60px;
   box-sizing: border-box;
+
+  ${media.mobile} {
+    width: calc(100vw - 2rem);
+    height: auto;
+    max-height: 90vh;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    overflow-y: auto;
+  }
 `
 
 export const Form = styled.form`
@@ -22,6 +32,11 @@ export const Form = styled.form`
   gap: 40px;
   width: 100%;
   max-width: 500px;
+
+  ${media.mobile} {
+    gap: 1.5rem;
+    max-width: 100%;
+  }
 `
 
 export const Title = styled.h2`
@@ -30,6 +45,11 @@ export const Title = styled.h2`
   font-weight: 600;
   margin-bottom: 20px;
   text-align: center;
+
+  ${media.mobile} {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
 `
 
 export const Description = styled.p`
@@ -38,6 +58,12 @@ export const Description = styled.p`
   text-align: center;
   margin-bottom: 40px;
   line-height: 1.5;
+
+  ${media.mobile} {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
 `
 
 export const InputContainer = styled.div`
@@ -66,6 +92,12 @@ export const PhoneInput = styled.input`
 
   &::placeholder {
     color: #999;
+  }
+
+  ${media.mobile} {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    border-radius: 10px;
   }
 `
 
@@ -98,6 +130,12 @@ export const SubmitButton = styled.button<{ disabled: boolean }>`
       `
       transform: translateY(0);
     `}
+  }
+
+  ${media.mobile} {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    border-radius: 10px;
   }
 `
 
@@ -138,6 +176,18 @@ export const CloseButton = styled.button`
   &::after {
     transform: rotate(-45deg);
   }
+
+  ${media.mobile} {
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    &::before,
+    &::after {
+      width: 1rem;
+    }
+  }
 `
 
 export const SuccessMessage = styled.div`
@@ -146,6 +196,10 @@ export const SuccessMessage = styled.div`
   text-align: center;
   margin-top: 10px;
   font-weight: 500;
+
+  ${media.mobile} {
+    font-size: 0.875rem;
+  }
 `
 
 export const ErrorMessage = styled.div`
@@ -154,4 +208,8 @@ export const ErrorMessage = styled.div`
   text-align: center;
   margin-top: 10px;
   font-weight: 500;
+
+  ${media.mobile} {
+    font-size: 0.875rem;
+  }
 `

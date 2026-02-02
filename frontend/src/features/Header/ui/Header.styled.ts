@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { media } from "../../../app/styles/media.styled"
 
 export const Header = styled.header`
   display: grid;
@@ -12,4 +13,11 @@ export const Header = styled.header`
   position: sticky;
   top: 0;
   z-index: 1001;
+
+  ${media.mobile} {
+    grid-template-columns: auto 1fr auto;
+    gap: 0.5rem;
+    padding: 0 1rem;
+    height: 60px;
+  }
 `
