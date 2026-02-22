@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { media } from "../../../app/styles/media.styled"
+
+import { mixinsMediaStyled } from "@shared/ui"
 
 export const Header = styled.header`
   display: grid;
@@ -9,12 +10,13 @@ export const Header = styled.header`
   padding: 0 2rem;
   background: #1b1b1bf0;
   box-shadow: 0 0 5px ${({ theme }) => theme.main.background_black_extra};
+  border-bottom: 2px solid #2f2f2f;
 
   position: sticky;
   top: 0;
   z-index: 1001;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     grid-template-columns: auto 1fr auto;
     gap: 0.5rem;
     padding: 0 1rem;

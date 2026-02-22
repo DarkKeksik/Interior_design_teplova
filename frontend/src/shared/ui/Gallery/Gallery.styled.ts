@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { media } from "@app/styles/media.styled"
+
+import { media } from "../styledMixins/media.styled"
 
 export const ProjectGallery = styled.section``
 

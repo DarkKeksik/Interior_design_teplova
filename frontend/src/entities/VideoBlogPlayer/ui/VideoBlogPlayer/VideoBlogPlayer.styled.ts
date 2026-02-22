@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { media } from "@app/styles/media.styled"
+
+import { mixinsMediaStyled } from "@shared/ui"
 
 export const Wrap = styled.div`
   display: grid;
@@ -9,7 +10,7 @@ export const Wrap = styled.div`
   font-family: ${({ theme }) => theme.main && theme.main.font_family_text};
   width: 100%;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     grid-template-columns: 1fr;
   }
 `

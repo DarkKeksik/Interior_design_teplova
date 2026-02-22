@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components"
-import { media } from "@app/styles/media.styled"
+
+import { media } from "../styledMixins/media.styled"
 
 export const Button = styled.button`
   border: 2px solid;

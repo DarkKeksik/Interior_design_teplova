@@ -2,10 +2,9 @@ import { createBrowserRouter, Outlet } from "react-router-dom"
 
 import { PageWithLayouts } from "../layouts"
 
-import { MainPage, VideoBlogPage, ProjectsPage, ProjectPage } from "@pages/index"
+import { MainPage, VideoBlogPage, ProjectsPage, ProjectPage, NotFoundPage } from "@pages/index"
 
 import { linksPages } from "@shared/config"
-import { NotFound } from "@shared/ui"
 
 const router = createBrowserRouter([
   {
@@ -55,7 +54,11 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <NotFound />,
+    element: (
+      <PageWithLayouts>
+        <NotFoundPage />
+      </PageWithLayouts>
+    ),
   },
 ])
 

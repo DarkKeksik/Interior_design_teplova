@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { media } from "@app/styles/media.styled"
+
+import { mixinsMediaStyled } from "@shared/ui"
 
 export const FormContainer = styled.div`
   position: relative;
@@ -15,7 +16,7 @@ export const FormContainer = styled.div`
   padding: 60px;
   box-sizing: border-box;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     width: calc(100vw - 2rem);
     height: auto;
     max-height: 90vh;
@@ -33,7 +34,7 @@ export const Form = styled.form`
   width: 100%;
   max-width: 500px;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     gap: 1.5rem;
     max-width: 100%;
   }
@@ -46,7 +47,7 @@ export const Title = styled.h2`
   margin-bottom: 20px;
   text-align: center;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
   }
@@ -59,7 +60,7 @@ export const Description = styled.p`
   margin-bottom: 40px;
   line-height: 1.5;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     font-size: 0.875rem;
     margin-bottom: 1rem;
     line-height: 1.4;
@@ -94,7 +95,7 @@ export const PhoneInput = styled.input`
     color: #999;
   }
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     padding: 0.875rem 1rem;
     font-size: 1rem;
     border-radius: 10px;
@@ -132,7 +133,7 @@ export const SubmitButton = styled.button<{ disabled: boolean }>`
     `}
   }
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     padding: 0.875rem 1rem;
     font-size: 1rem;
     border-radius: 10px;
@@ -177,7 +178,7 @@ export const CloseButton = styled.button`
     transform: rotate(-45deg);
   }
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     top: 1rem;
     right: 1rem;
     width: 2.5rem;
@@ -197,7 +198,7 @@ export const SuccessMessage = styled.div`
   margin-top: 10px;
   font-weight: 500;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     font-size: 0.875rem;
   }
 `
@@ -209,7 +210,7 @@ export const ErrorMessage = styled.div`
   margin-top: 10px;
   font-weight: 500;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     font-size: 0.875rem;
   }
 `

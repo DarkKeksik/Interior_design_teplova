@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { media } from "@app/styles/media.styled"
+
+import { mixinsMediaStyled } from "@shared/ui"
 
 export const ProjectInformation = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ export const ProjectInformation = styled.div`
   min-height: calc(100vh - (50px));
   padding: 3rem;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     padding: 1.5rem 1rem;
     gap: 1.5rem;
     min-height: auto;
@@ -20,7 +21,7 @@ export const Title = styled.h2`
   letter-spacing: 2px;
   font-weight: 500;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     font-size: 1.125rem;
     letter-spacing: 1px;
   }
@@ -32,7 +33,7 @@ export const DescriptionBlock = styled.div`
   gap: 1.5rem;
   padding: 0 1.5rem;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 0;
@@ -44,7 +45,7 @@ export const DescriptionItem = styled.div`
   align-items: center;
   gap: 1rem;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     gap: 0.75rem;
   }
 `
@@ -54,7 +55,7 @@ export const DescriptionIcon = styled.span`
   height: 2rem;
   fill: ${({ theme }) => theme.main.color_text};
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     width: 1.5rem;
     height: 1.5rem;
   }
@@ -65,7 +66,7 @@ export const Info = styled.div`
   flex-direction: column;
   gap: 8px;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     gap: 4px;
   }
 `
@@ -74,7 +75,7 @@ export const InfoName = styled.div`
   font-weight: 100;
   font-size: 0.875rem;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     font-size: 0.8rem;
   }
 `
@@ -83,7 +84,7 @@ export const InfoValue = styled.div`
   font-weight: 600;
   font-size: 0.9375rem;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     font-size: 0.875rem;
   }
 `
@@ -92,7 +93,7 @@ export const TextDescription = styled.p`
   line-height: 1.5rem;
   font-size: 0.9375rem;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     font-size: 0.875rem;
     line-height: 1.4rem;
   }

@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { media } from "../../../../app/styles/media.styled"
+
+import { mixinsMediaStyled } from "@shared/ui"
 
 export const SliderCube = styled.div`
   position: relative;
@@ -33,12 +34,12 @@ export const SliderCube = styled.div`
     padding: 1rem;
     border-radius: 100px;
 
-    ${media.mobile} {
+    ${mixinsMediaStyled.media.mobile} {
       display: none;
     }
   }
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     width: 100%;
     height: 480px;
   }

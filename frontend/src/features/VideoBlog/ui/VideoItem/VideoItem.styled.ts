@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { media } from "@app/styles/media.styled"
+
+import { mixinsMediaStyled } from "@shared/ui"
 
 export const Wrap = styled.div`
   position: relative;
@@ -10,7 +11,7 @@ export const Wrap = styled.div`
 export const Preview = styled.img`
   min-height: 270px;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     min-height: 180px;
   }
 `
@@ -28,7 +29,7 @@ export const VideoServices = styled.div`
   bottom: 0;
   z-index: 1;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     padding: 0.375rem 0.75rem;
   }
 `
@@ -46,7 +47,7 @@ export const IconLink = styled.span`
     transform: scale(1.2);
   }
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     padding: 0.075rem 0.15rem;
   }
 `
@@ -81,7 +82,7 @@ export const VideoPlayBlock = styled.div`
     transform: scale(1.2);
   }
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     svg {
       width: 40px;
       height: 40px;

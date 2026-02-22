@@ -1,10 +1,11 @@
 import styled from "styled-components"
-import { media } from "@app/styles/media.styled"
+
+import { mixinsMediaStyled } from "@shared/ui"
 
 export const Wrap = styled.div`
   min-height: calc(100vh - 50px);
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     min-height: calc(100vh - 60px);
   }
 `
@@ -14,7 +15,7 @@ export const WrapContent = styled.div`
   height: 100%;
   width: 100%;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     flex-direction: column;
   }
 `
@@ -28,7 +29,7 @@ export const LeftBlock = styled.div`
   height: 100%;
   width: 50%;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     position: relative;
     top: 0;
     width: 100%;
@@ -42,7 +43,7 @@ export const RightBlock = styled.div`
   overflow: hidden;
   z-index: 0;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     box-shadow: none;
   }
 `
@@ -50,7 +51,7 @@ export const RightBlock = styled.div`
 export const InfoContent = styled.div`
   padding: 0 1.5rem;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     padding: 0 1rem;
   }
 `

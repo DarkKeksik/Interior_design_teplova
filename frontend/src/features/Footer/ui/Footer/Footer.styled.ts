@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { media } from "@app/styles/media.styled"
+
+import { mixinsMediaStyled } from "@shared/ui"
 
 export const Footer = styled.footer`
   display: grid;
@@ -10,7 +11,7 @@ export const Footer = styled.footer`
   border-top: 3px solid #fffff0;
   box-sizing: content-box;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     grid-template-columns: 1fr;
     padding: 1.5rem 1rem;
     min-height: auto;
@@ -31,7 +32,7 @@ export const Wrap = styled.div`
   align-items: baseline;
   gap: 10px;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     gap: 8px;
   }
 `
@@ -39,7 +40,7 @@ export const Wrap = styled.div`
 export const CopyrightNotice = styled.small`
   font-size: 12px;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     font-size: 11px;
   }
 `
@@ -52,7 +53,7 @@ export const Description = styled.div`
   height: 100%;
   border-right: 2px solid #fffff0;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     border-right: none;
     border-bottom: 2px solid #fffff0;
     padding-bottom: 1rem;

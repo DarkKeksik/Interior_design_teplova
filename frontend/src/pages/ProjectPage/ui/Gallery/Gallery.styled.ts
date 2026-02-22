@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { media } from "@app/styles/media.styled"
+
+import { mixinsMediaStyled } from "@shared/ui"
 
 export const Gallery = styled.div`
   width: 100%;
@@ -11,7 +12,7 @@ export const ImageSlider = styled.img`
   width: 100%;
   height: calc(100vh - 50px - 125px);
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     height: auto;
     max-height: 300px;
     object-fit: cover;
@@ -26,7 +27,7 @@ export const ImageThumb = styled.img`
   width: 100%;
   height: 8rem;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     height: 5rem;
   }
 `

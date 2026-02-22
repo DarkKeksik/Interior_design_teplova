@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components"
-import { media } from "@app/styles/media.styled"
+
+import { mixinsMediaStyled } from "@shared/ui"
 
 type TProject = {
   source?: string
@@ -15,7 +16,7 @@ export const Preloader = styled.div`
 export const TitleSection = styled.h2`
   margin: 0 2rem 2.5rem 2rem;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     margin: 0 1rem 1.5rem 1rem;
     font-size: 1.5rem;
   }
@@ -46,7 +47,7 @@ export const Content = styled.div`
 
   background: ${({ theme }) => theme.main.background_black_extra};
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
@@ -110,7 +111,7 @@ export const Project = styled(Item)<TProject>`
     font-size: 0.5em;
   }
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     &:nth-of-type(1) {
       font-size: 0.8em;
       min-height: 250px;
@@ -162,7 +163,7 @@ export const ButtonGallery = styled.div`
     border-color: ${({ theme }) => theme.main.hover_text_button};
   }
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     font-size: 1rem;
     line-height: 1.1rem;
     padding: 0.75rem;

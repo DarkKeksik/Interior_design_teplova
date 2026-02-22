@@ -1,6 +1,7 @@
 const themes = {
   main: {
     color_text: "#FFFFF0",
+    color_text_opposite: "#1B1B1B",
     some_accent: "#CBA35C",
     color_text_extra: "#A5A59B",
     color_text_extra_2: "#1B1B1B",
@@ -47,8 +48,8 @@ const themes = {
     },
   },
   burgerMenu: {
-    background: "#FFFFF0",
-    colorText: "#CBA35C",
+    background: "#2A2A2A",
+    colorText: "#FFFFF0",
   },
   dark: {},
 }

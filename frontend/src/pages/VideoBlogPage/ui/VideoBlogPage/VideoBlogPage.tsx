@@ -2,23 +2,16 @@ import type { FC } from "react"
 import { useParams } from "react-router-dom"
 import qs from "qs"
 
-import { useLayoutEffect } from "react"
-
 import { VideoBlogPlayer } from "@entities/index"
 import { Headline } from "@shared/ui"
 import { linksPages } from "@shared/config"
 import { hooksData } from "@shared/hooks"
+import { hooksVirtualScroll } from "@shared/hooks"
 
 import * as Styled from "./VideoBlogPage.styled"
 
 const VideoBlogPage: FC = () => {
-  useLayoutEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    })
-  }, [])
+  hooksVirtualScroll.useScrollTop({})
 
   const { slug } = useParams()
 

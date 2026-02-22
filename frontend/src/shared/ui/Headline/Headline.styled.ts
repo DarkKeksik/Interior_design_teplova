@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components"
-import { media } from "../../../app/styles/media.styled"
+
+import { media } from "../styledMixins/media.styled"
 
 type TSizes = { s: "s"; m: "m"; l: "l" }
 

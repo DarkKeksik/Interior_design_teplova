@@ -1,6 +1,6 @@
 import type { FC } from "react"
 
-import { useLayoutEffect } from "react"
+import { hooksVirtualScroll } from "@shared/hooks"
 
 import * as Styled from "./MainPage.styled"
 
@@ -9,13 +9,7 @@ import { WelcomeSection, ProjectsShort, PlanDesignWork, SectionTextMe } from "@e
 import { BrashDrawing } from "@shared/ui"
 
 const MainPage: FC = () => {
-  useLayoutEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    })
-  }, [])
+  hooksVirtualScroll.useScrollTop({})
 
   return (
     <Styled.Wrap>

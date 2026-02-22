@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { media } from "@app/styles/media.styled"
+
+import { mixinsMediaStyled } from "@shared/ui"
 
 type TTabItem = {
   isActive?: boolean
@@ -9,7 +10,7 @@ export const Wrap = styled.div`
   display: flex;
   gap: 1.5rem;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     flex-direction: column;
   }
 `

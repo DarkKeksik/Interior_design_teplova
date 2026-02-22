@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { media } from "@app/styles/media.styled"
+
+import { mixinsMediaStyled } from "@shared/ui"
 
 export const WrapPreview = styled.div`
   position: relative;
@@ -17,7 +18,7 @@ export const Preview = styled.img`
   height: 9.375rem;
   border-radius: 10px;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     object-fit: cover;
   }
 `

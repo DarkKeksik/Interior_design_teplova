@@ -1,8 +1,9 @@
 import { createGlobalStyle } from "styled-components"
 import reset from "styled-reset"
 
+import { mixinsMediaStyled } from "@shared/ui"
+
 import { fontFamilies } from "./fonts.styled"
-import { media } from "./media.styled"
 
 const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -20,26 +21,6 @@ const GlobalStyle = createGlobalStyle`
 
     a {
         text-decoration: none;
-    }
-
-    .flex-center-center {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .h-w-100 {
-        height: 100%;
-        width: 100%;
-    }
-
-    .p-20 {
-        padding: 20px;
-
-        ${media.mobile} {
-            padding: 10px;
-        }
     }
 
     @supports selector(::-webkit-scrollbar) {
@@ -64,7 +45,7 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
-    ${media.mobile} {
+    ${mixinsMediaStyled.media.mobile} {
         html {
             font-size: 14px;
         }

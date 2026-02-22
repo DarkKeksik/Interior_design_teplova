@@ -1,11 +1,12 @@
 import styled from "styled-components"
-import { media } from "@app/styles/media.styled"
+
+import { mixinsMediaStyled } from "@shared/ui"
 
 export const Wrap = styled.div`
   min-height: calc(100vh - (50px));
   position: relative;
 
-  ${media.mobile} {
+  ${mixinsMediaStyled.media.mobile} {
     min-height: 300px;
   }
 `
@@ -30,7 +31,7 @@ export const Popup = styled.div`
       top: 5px !important;
     }
 
-    ${media.mobile} {
+    ${mixinsMediaStyled.media.mobile} {
       .maplibregl-popup-content {
         font-size: 0.8rem;
         line-height: 1.1rem;

@@ -1,23 +1,17 @@
 import type { FC } from "react"
-import { useLayoutEffect } from "react"
 import { useParams } from "react-router-dom"
 import qs from "qs"
 
 import type { TProjectsInfo } from "@shared/api"
 import { Headline, SectionBlack, Preloader } from "@shared/ui"
 import { hooksData } from "@shared/hooks"
+import { hooksVirtualScroll } from "@shared/hooks"
 
 import { Gallery, ProjectInformation } from "../"
 import * as Styled from "./ProjectPage.styled"
 
 const ProjectPage: FC = () => {
-  useLayoutEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    })
-  }, [])
+  hooksVirtualScroll.useScrollTop({})
 
   const { slug } = useParams()
   const query = qs.stringify(

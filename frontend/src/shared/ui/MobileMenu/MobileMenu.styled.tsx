@@ -1,5 +1,6 @@
-import { media } from "@app/styles/media.styled"
 import styled from "styled-components"
+
+import { media } from "../styledMixins/media.styled"
 
 export const MobileMenu = styled.div`
   display: none;
